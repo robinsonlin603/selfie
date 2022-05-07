@@ -15,7 +15,6 @@
     padding-top: 5px;
 }
 .navbar .logo {
-    margin-right: auto;
     cursor: pointer;
 }
 .navbar #logo {
@@ -39,10 +38,11 @@
 
 .navbar form{
     display: flex;
-    margin-right: 100px;
+    margin-right: 50px;
     font-size: 0.8rem;
     width:300px;
     justify-content: flex-end;
+    margin-left: 50px;
 }
 
 .navbar form img{
