@@ -1,0 +1,31 @@
+.login-form {
+    max-width: 360px;
+    margin: 30px auto auto auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+    background: #fff;
+}
+
+.login-form .photo{
+    margin-left: 100px;
+}
+
+.login-form button{
+    width: 100%;
+}
+
+.signup a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.signup{
+    max-width: 360px;
+    margin: 10px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+    background: #fff;
+}

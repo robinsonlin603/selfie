@@ -1,0 +1,13 @@
+.avatar {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding-bottom: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.avatar img {
+    width: 35px;
+    height: 35px;
+}

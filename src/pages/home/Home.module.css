@@ -1,0 +1,13 @@
+.main{
+    flex-grow: 1;
+    order: 4;
+    display: grid;
+    grid-template-columns: 1fr 650px 2fr;
+}
+.main section{
+    grid-column: 2/3;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 650px;
+    gap: 20px;
+}

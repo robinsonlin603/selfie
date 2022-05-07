@@ -1,0 +1,30 @@
+.posts-filter {
+    margin: 30px auto;
+    grid-column: 2/3;
+}
+
+.posts-filter nav {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.posts-filter p {
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.posts-filter button {
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    border-right: 1px solid #e4e4e4;
+}
+
+.posts-filter button:last-child {
+    border: 0;
+}

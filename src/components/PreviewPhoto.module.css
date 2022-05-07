@@ -1,0 +1,16 @@
+.previewPhoto{
+    display: grid;
+    grid-template-columns: 165px 165px 165px;
+    grid-template-rows: 170px;
+    width: 100%;
+    gap: 5px;
+}
+
+.previewPhoto .photo{
+    width: 165px;
+    height: 170px;
+}
+.previewPhoto img{
+    width: 100%;
+    height: 100%;
+}
