@@ -1,0 +1,15 @@
+.postname{
+    display: grid;
+    grid-template-columns: 45px auto;
+    height: 60px;
+    padding-left: 30px;
+    align-items: center;
+}
+.postname .photo{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.postname h3{
+    font-weight: 400;
+}

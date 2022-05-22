@@ -41,22 +41,15 @@
 .posts .create-form{
     flex-shrink: 1;
     justify-content: center;
-    margin: 20px;
-    max-height: calc(100% - 40px);
     display: flex;
 }
 
 .posts .create-form .form{
-    height: 100%;
     background-color: rgba(var(--f23,255,255,255),1);
     border-radius: 12px;
-    display: flex;
-    width: 527px;
-    max-width: 531px;
-    min-width: 348px;
+    display: grid;
     min-height: 391px;
-    max-height: 574px;
-    flex-direction: column;
+    grid-template-rows: 30px auto;
     overflow: hidden;
 }
 
@@ -70,42 +63,42 @@
     border-bottom: solid gainsboro 1px;
 }
 
-.posts form{
-    flex-direction: row;
-    height: calc(100vmin - 219px);
-    max-height: min(calc(100vw - 372px),855px);
-    max-width: min(calc(100vw - 372px),855px);
-    min-height: 348px;
-    min-width: 348px;
+.create-form .form form{
     display: flex;
     flex-direction: column;
+    width: 527px;
 }
-
-.posts label{
-    width: 95%;
-    margin-left: 10px;
-}
-
-.posts #btn{
-    text-align: center;
-}
-
-.posts img{
-    align-self: center;
-    align-items: center;
-    display: flex;
-}
-.uploadphoto{
+.form form .uploadphoto{
     cursor: pointer;
-    align-items: center;
-    display: flex;
-    padding-left: 160px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.form form .uploadphoto img{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    padding-left: 40px;
+}
+.form form .uploadphoto span{
+    padding-top: 6px;
+}
 
-.posts button{
-    width: 95%;
-    margin-left: 10px;
+.form form label img{
+    width: 165px;
+    height: 170px;
+}
 
+.form form label button{
+    border: 1px solid var(--primary-color);
+    width: auto;
+    position: relative;
+}
+
+.form form label {
+    margin: 12px 0px;
+    display: flex;
+    justify-content: center;
+}
+.form form .selected{
+    margin-top: 10px;
 }

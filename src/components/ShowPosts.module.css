@@ -1,7 +1,7 @@
 .post-container{
     background-color: white;
     display: grid;
-    grid-template-rows: 70px 765px 30px auto 40px;
+    grid-template-rows: 70px 700px 30px auto 50px;
     
 }
 
@@ -20,6 +20,11 @@
     display: flex;
     flex-direction: column;
     font-size: 0.8rem;
+}
+
+.post-container .title .userphoto{
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .post-container .option{
@@ -131,13 +136,21 @@
     font-weight: bold;
     margin-bottom: 3px;
 }
+.comment-container .caption .displayName{
+    cursor: pointer;
+}
+.comment-container .comments{
+    font-size: 0.8rem;
+    padding-left: 16px;
+    color: gainsboro;
+    cursor: pointer;
+}
 
 .comment-container .caption p{
     font-size: 0.8rem;
     padding-left: 0px;
     font-weight: normal;
     padding-left: 3px;
-    line-height: 1.9;
 }
 
 .comment-container .caption span{

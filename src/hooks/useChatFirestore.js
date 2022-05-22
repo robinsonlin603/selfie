@@ -8,22 +8,33 @@ import {
   doc,
   updateDoc,
 } from "firebase/firestore";
-import { db, storage, timestamp, auth } from "../firebase/config";
-import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
+import { db, timestamp } from "../firebase/config";
 
 const firestoreReducer = (state, action) => {
   switch (action.type) {
     case "IS_PENDING":
-      return { isPending: true, document: null, success: false, error: null };
+      return {
+        ...state,
+        isPending: true,
+        document: null,
+        success: false,
+        error: null,
+      };
     case "ADDED_DOCUMENT":
       return {
+        ...state,
         isPending: false,
         document: action.payload,
         success: true,
         error: null,
       };
     case "DELETED_DOCUMENT":
-      return { isPending: false, document: null, success: true, error: null };
+      return {
+        isPending: false,
+        document: null,
+        success: true,
+        error: null,
+      };
     case "ERROR":
       return {
         isPending: false,
@@ -39,7 +50,7 @@ const firestoreReducer = (state, action) => {
         error: null,
       };
     default:
-      return state;
+      return { ...state };
   }
 };
 
@@ -50,7 +61,7 @@ let initialState = {
   success: null,
 };
 
-export const useFirestore = (collectionName) => {
+export const useChatFirestore = (collectionName) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   const [isCancelled, setIsCancelled] = useState(false);
 
@@ -83,37 +94,25 @@ export const useFirestore = (collectionName) => {
 
   // add file
   const addDocument = async (doc) => {
-    let photoURL = [];
-    for (let i = 0; i < doc.photo.length; i++) {
-      let file = doc.photo[i];
-      const fileRef = ref(
-        storage,
-        `postsphoto/${auth.currentUser.uid}/${file.name}`
-      );
-      await uploadBytes(fileRef, file);
-      const url = await getDownloadURL(fileRef);
-      photoURL.push(url);
-    }
-    delete doc.photo;
-    doc.photoURL = photoURL;
     const postref = collection(db, collectionName);
     dispatch({ type: "IS_PENDING" });
+    const createdAt = timestamp.fromDate(new Date());
     try {
-      const createdAt = timestamp.fromDate(new Date());
       const addedDocument = await addDoc(postref, { ...doc, createdAt });
       dispatchIfNotCancelled({
         type: "ADDED_DOCUMENT",
         payload: addedDocument,
       });
+      return addedDocument;
     } catch (error) {
       dispatchIfNotCancelled({ type: "ERROR", payload: error.message });
+      return null;
     }
   };
 
   // delete file
   const deleteDocument = async (id) => {
     dispatch({ type: "IS_PENDING" });
-
     try {
       const docRef = doc(db, collectionName, id);
       await deleteDoc(docRef);

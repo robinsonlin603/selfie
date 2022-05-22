@@ -1,39 +1,39 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 // firebase imports
 import {
   collection,
   onSnapshot,
   query,
-  orderBy,
   where,
+  orderBy,
 } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-export const useCollection = (collectionName, _orderBy, _query) => {
+export const useChatCollection = (collectionName, userone, usertwo) => {
   const [documents, setDocument] = useState("");
   const [error, setError] = useState("");
   const [isPending, setIsPending] = useState(false);
 
-  // set up query
-
-  const order = useRef(_orderBy).current;
-  const q = useRef(_query).current;
-
   useEffect(() => {
     let ref = collection(db, collectionName);
-
-    if (order) {
-      ref = query(ref, orderBy(order, "desc"));
+    if (userone && !usertwo) {
+      ref = query(
+        ref,
+        orderBy("createdAt", "desc"),
+        where(userone, "==", true)
+      );
     }
-
-    if (q) {
-      ref = query(ref, where(...q));
+    if (usertwo) {
+      ref = query(
+        ref,
+        orderBy("createdAt", "desc"),
+        where(userone, "==", true),
+        where(usertwo, "==", true)
+      );
     }
-    setIsPending(true);
 
     // fetch data
-
     const unsub = onSnapshot(
       ref,
       (snapshot) => {
@@ -53,7 +53,7 @@ export const useCollection = (collectionName, _orderBy, _query) => {
     );
 
     return () => unsub();
-  }, [collectionName, order, q]);
+  }, [collectionName, userone, usertwo]);
 
   return { documents, error, isPending };
 };

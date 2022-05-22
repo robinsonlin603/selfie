@@ -1,0 +1,45 @@
+.postcard-container{
+    display: grid;
+    height: 70px;
+    grid-template-columns: 70px 280px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.postcard-container .photo{
+    padding: 10px;
+}
+.postcard-container .photo .avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.postcard-container .user{
+    padding: 20px 0px 10px 10px;
+}
+.postcard-container .user h4{
+    color: black;
+    font-weight:400;
+}
+.postcard-container .user p{
+    color: var( --text-color);
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+.postcard-container .photo .online-user{
+    position: absolute;
+    margin-left: 40px;
+    width: 12px;
+    height: 12px;
+    background: #0ebb50;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+.postcard-container .photo .offline-user{
+    position: absolute;
+    margin-left: 40px;
+    width: 12px;
+    height: 12px;
+    background: grey;
+    border-radius: 50%;
+    margin-top: 50px;
+}
