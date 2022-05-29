@@ -99,6 +99,19 @@ export default function NewPosts({ setClickAddPost }) {
     }
   };
 
+  let today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth() + 1;
+  let yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  today = yyyy + "-" + mm + "-" + dd;
+
   return (
     <div className={styles.posts}>
       <div className={styles.close}>
@@ -187,6 +200,7 @@ export default function NewPosts({ setClickAddPost }) {
                     type="date"
                     onChange={(e) => setDueDate(e.target.value)}
                     value={dueDate}
+                    max={today}
                   />
                 </label>
                 <label>

@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 
 // firebase imports
-import {
-  collection,
-  onSnapshot,
-  query,
-  where,
-  orderBy,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export const useChatCollection = (collectionName, userone, usertwo) => {
@@ -18,19 +12,10 @@ export const useChatCollection = (collectionName, userone, usertwo) => {
   useEffect(() => {
     let ref = collection(db, collectionName);
     if (userone && !usertwo) {
-      ref = query(
-        ref,
-        orderBy("createdAt", "desc"),
-        where(userone, "==", true)
-      );
+      ref = query(ref, where(userone, "==", true));
     }
     if (usertwo) {
-      ref = query(
-        ref,
-        orderBy("createdAt", "desc"),
-        where(userone, "==", true),
-        where(usertwo, "==", true)
-      );
+      ref = query(ref, where(userone, "==", true), where(usertwo, "==", true));
     }
 
     // fetch data

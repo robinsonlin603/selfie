@@ -1,3 +1,14 @@
+.background{
+    background-image: url("../../assets/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
 .signup-form {
     max-width: 360px;
     margin: 30px auto auto auto;
@@ -6,11 +17,21 @@
     box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
     background: #fff;
 }
-
-.signup-form .photo{
-    margin-left: 100px;
+.signup-form p{
+    margin-top: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
 }
 
+.signup-form .photo{
+    display: flex;
+    justify-content: center;
+}
+.signup-form .photo img{
+    width: 90px;
+    height: 51px;
+}
 .signup-form label img{
     width: 48px;
     height: 48px;

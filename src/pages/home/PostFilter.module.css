@@ -1,7 +1,8 @@
 .posts-filter {
     margin: 30px auto;
     grid-column: 2/3;
-    width: 100%;
+    position: sticky; 
+    top: 0; 
 }
 
 .posts-filter nav {
@@ -9,11 +10,12 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
+    flex-direction: column;
 }
 
 .posts-filter p {
     font-size: 0.9em;
-    margin-right: 10px;
+    text-align: center;
 }
 
 .posts-filter button {
@@ -23,9 +25,29 @@
     font-weight: bold;
     color: var(--text-color);
     cursor: pointer;
-    border-right: 1px solid #e4e4e4;
 }
 
 .posts-filter button:last-child {
     border: 0;
 }
+
+
+@media (max-width:900px) {
+    .posts-filter nav {
+        flex-direction: row;
+        width: 650px;
+        padding: 10px 0px;
+    }
+    .posts-filter p {
+        margin-left: 10px;
+    }
+    .posts-filter button {
+        border-right: 1px solid #e4e4e4;
+    }
+}
+@media (max-width:650px) {
+    .posts-filter nav {
+        width: 340px;
+    }
+}
+

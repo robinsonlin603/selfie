@@ -2,7 +2,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useChatCollection } from "../../hooks/useChatCollection";
 import { usePostCollection } from "../../hooks/usePostCollection";
-
+import { useState } from "react";
 // styles and images
 import styles from "./Chat.module.css";
 import Forum from "../../assets/forum.svg";
@@ -17,6 +17,7 @@ export default function Chat() {
   const { id = "none" } = useParams();
   const { documents } = useChatCollection("chatroom", `members.${user.uid}`);
   const { documents: useChatroom } = usePostCollection("chatroom", id);
+  const [changeChat, setChangeChat] = useState(false);
 
   return (
     <div className={styles.chatroom}>
@@ -58,6 +59,45 @@ export default function Chat() {
                 />
               </div>
               <div className={styles.useroom}>
+                <Outlet />
+              </div>
+            </>
+          )}
+          {!changeChat && (
+            <>
+              <div className={styles.switchuser}>
+                <li>
+                  <p>{user.displayName}</p>
+                </li>
+                <li>
+                  <img src={Forum} alt="forum icon" />
+                </li>
+              </div>
+              <div className={styles.switchfriendlist}>
+                {documents.map((document) => (
+                  <PostCard
+                    setChangeChat={setChangeChat}
+                    key={document.id}
+                    chatroomId={document.id}
+                    member={Object.keys(document.members).filter((m) => {
+                      return m !== user.uid;
+                    })}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+          {useChatroom[0].id !== "none" && changeChat && (
+            <>
+              <div className={styles.switchfriend}>
+                <PostName
+                  setChangeChat={setChangeChat}
+                  member={Object.keys(useChatroom[0].members).filter((m) => {
+                    return m !== user.uid;
+                  })}
+                />
+              </div>
+              <div className={styles.switchuseroom}>
                 <Outlet />
               </div>
             </>

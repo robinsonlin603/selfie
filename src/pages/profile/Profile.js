@@ -166,7 +166,7 @@ export default function profile() {
                 </li>
               </ul>
               <div className={styles.introduce}>
-                {userProfile[0].displayName}
+                Intro.
                 {!edditClick && <p>{userProfile[0].introduce}</p>}
                 {edditClick && (
                   <form onSubmit={handleSubmit}>
@@ -187,6 +187,17 @@ export default function profile() {
                 )}
               </div>
             </div>
+            <ul className={styles.detail2}>
+              <li>
+                {documents.length} <span>posts</span>
+              </li>
+              <li>
+                {userProfile[0].followers.length} <span>followers</span>
+              </li>
+              <li>
+                {userProfile[0].following.length} <span>following</span>
+              </li>
+            </ul>
           </header>
           <section>
             {documents.length === 0 && (

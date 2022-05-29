@@ -15,7 +15,7 @@
 .chatroom .user li{
     display: flex;
     justify-self: end;
-    width: 175px;
+    width: 90px;
     justify-content: flex-end;
 }
 .chatroom .user li:last-child{
@@ -69,4 +69,97 @@
     grid-row: 2/3;
     background-color: white;
     border: 1px solid gainsboro;
+}
+.chatroom .switchuser{
+    display: none;
+}
+.chatroom .switchfriendlist{
+    display: none;
+}
+.chatroom .switchfriend{
+    display: none;
+}
+.chatroom .switchuseroom{
+    display: none;
+}
+
+@media (max-width:950px) {
+    .chatroom{
+        grid-template-columns:1fr 180Px 470px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+}
+
+@media (max-width:650px) {
+    .chatroom{
+        grid-template-columns:1fr 180Px 250px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+}
+@media (max-width:450px) {
+    .chatroom{
+        display: grid;
+        grid-template-columns: 1fr 300px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+    .chatroom .user{
+        display: none;
+    }
+    .chatroom .friend{
+        display: none;
+    }
+    .chatroom .friendlist{
+        display: none;
+    }
+    .chatroom .useroom{
+        display: none;
+    }
+    .chatroom .only{
+        display: none;
+    }
+    .chatroom .switchuser{
+        display: flex;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: white;
+        border: 1px solid gainsboro;
+        align-items: center;
+        list-style: none;
+    }
+    .chatroom .switchuser li{
+        display: flex;
+        justify-self: end;
+        width: 150px;
+        justify-content: flex-end;
+    }
+    .chatroom .switchuser li:last-child{
+        margin-right: 10px;
+    }
+    .chatroom .switchuser img{
+        height: 35px;
+        width: 35px;
+    }
+    .chatroom .switchfriendlist{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display:flex;
+        flex-direction: column;
+    }
+    .chatroom .switchfriend{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display:flex;
+        flex-direction: column;
+    }
+    .chatroom .switchuseroom{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display: block;
+    }
 }

@@ -1,16 +1,37 @@
+.background{
+    background-image: url("../../assets/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
 .login-form {
     max-width: 360px;
-    margin: 30px auto auto auto;
+    margin: 80px auto auto auto;
     padding: 40px;
     border: 1px solid #ddd;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
     background: #fff;
 }
-
-.login-form .photo{
-    margin-left: 100px;
+.login-form p{
+    margin-top: 10px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
 }
 
+.login-form .photo{
+    display: flex;
+    justify-content: center;
+}
+.login-form .photo img{
+    width: 90px;
+    height: 51px;
+}
 .login-form button{
     width: 100%;
 }

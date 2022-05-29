@@ -1,13 +1,30 @@
 .main{
-    flex-grow: 1;
-    order: 4;
     display: grid;
-    grid-template-columns: 1fr 650px 2fr;
+    grid-template-columns: 1fr 200px 700px 1fr;
+    justify-items: center;
 }
 .main section{
-    grid-column: 2/3;
-    height: 100px;
+    grid-column: 3/4;
     display: grid;
     grid-template-columns: 650px;
     gap: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width:900px) {
+    .main{
+        grid-template-columns: 1fr 650px 1fr;
+    }
+    .main section{
+        grid-column: 2/3;
+        margin-top: 0px;
+    }
+}
+@media (max-width:650px) {
+    .main{
+        grid-template-columns: 1fr 340px 1fr;
+    }
+    .main section{
+        width: 340px;
+    }
 }

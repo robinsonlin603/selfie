@@ -4,7 +4,7 @@ import { useLogin } from "../../hooks/useLogin";
 
 // styles and images
 import styles from "./Login.module.css";
-import Title from "../../assets/title.png";
+import Selfie from "../../assets/selfie.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,8 +18,12 @@ export default function Login() {
 
   return (
     <>
+      <div className={styles.background}></div>
       <form className={styles["login-form"]} onSubmit={handleSubmit}>
-        <img src={Title} alt="selfie logo" className={styles.photo} />
+        <div className={styles.photo}>
+          <img src={Selfie} alt="selfie logo" />
+        </div>
+        <p>Login to see photos and articles from Anonymous.</p>
         <label>
           <input
             required

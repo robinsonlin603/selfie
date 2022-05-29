@@ -7,13 +7,14 @@ import styles from "./PostCard.module.css";
 // components
 import Avatar from "../../components/Avatar";
 
-export default function PostCard({ member, chatroomId, setUserProfile }) {
+export default function PostCard({ member, chatroomId, setChangeChat }) {
   const { documents: userProfile } = usePostCollection("users", member[0]);
 
   return (
     <Link
       to={{ pathname: `${chatroomId}` }}
       className={styles["postcard-container"]}
+      onClick={() => setChangeChat(true)}
     >
       {userProfile.length > 0 && (
         <>

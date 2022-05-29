@@ -2,7 +2,6 @@
     background-color: white;
     display: grid;
     grid-template-rows: 70px 700px 30px auto 50px;
-    
 }
 
 .post-container .title{
@@ -66,7 +65,6 @@
 }
 
 .photo-container .legtarrow{
-    z-index: 3;
     position: absolute;
     top: 320px;
     left:0px;
@@ -75,7 +73,6 @@
 }
 
 .photo-container .rightarrow{
-    z-index: 3;
     position: absolute;
     top: 320px;
     left: 630px;
@@ -193,4 +190,51 @@
     margin-top: 0px;
     height: 30px;
     width: 30px;
+}
+.comment-container .details .detailtext{
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width:650px) {
+    .post-container{
+        grid-template-rows: 70px 350px auto auto 50px;
+        width: 340px;
+    }
+    .post-container .title{
+        width: 340px;
+    }
+    .post-container .title header{
+        width: 280px;
+    }
+    .post-container .option{
+        width: 40px;
+    }
+    .photo-container{
+        width: 340px;
+    }
+    .photo-container .legtarrow{
+        top: 160px;
+        left:10px;
+    }
+    .photo-container .rightarrow{
+        top: 160px;
+        left: 315px;
+    }   
+    .content-container .circle{
+        width:280px;
+    }
+    .post-container .content-container{
+        width: 340px;
+    }
+    .comment-container{
+        width: 340px;
+    }
+    .comment-container .details{
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .add-comment{
+        width: 340px;
+    }
 }

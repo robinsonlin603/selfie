@@ -56,6 +56,7 @@ export const useFirestore = (collectionName) => {
 
   const dispatchIfNotCancelled = (action) => {
     if (!isCancelled) {
+      console.log(action);
       dispatch(action);
     }
   };
@@ -66,18 +67,15 @@ export const useFirestore = (collectionName) => {
 
     let ref = collection(db, collectionName);
     ref = doc(ref, id);
-
     try {
-      const updatedDocument = await updateDoc(ref, updates);
+      await updateDoc(ref, updates);
       dispatchIfNotCancelled({
         type: "UPDATE_DOCUMENT",
-        payload: updatedDocument,
+        payload: updates,
       });
-      return updatedDocument;
     } catch (error) {
       console.log(error.message);
       dispatchIfNotCancelled({ type: "ERROR", payload: error.message });
-      return null;
     }
   };
 
@@ -100,10 +98,10 @@ export const useFirestore = (collectionName) => {
     dispatch({ type: "IS_PENDING" });
     try {
       const createdAt = timestamp.fromDate(new Date());
-      const addedDocument = await addDoc(postref, { ...doc, createdAt });
+      await addDoc(postref, { ...doc, createdAt });
       dispatchIfNotCancelled({
         type: "ADDED_DOCUMENT",
-        payload: addedDocument,
+        payload: { ...doc, createdAt },
       });
     } catch (error) {
       dispatchIfNotCancelled({ type: "ERROR", payload: error.message });

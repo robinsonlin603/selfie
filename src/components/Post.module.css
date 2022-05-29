@@ -1,6 +1,6 @@
 .post-container{
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 30px auto;
     background-color: rgba(0,0,0,.65);
     bottom: 0;
     left: 0;
@@ -8,12 +8,14 @@
     right: 0;
     top: 0;
     z-index: 100;
+    align-items: center;
 }
 .post-container .close{
-    position: absolute;
-    right: 10px;
-    top: 10px;
+    grid-row: 1/2;
     z-index: 1;
+    justify-self: flex-end;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 .post-container .close button{
@@ -38,32 +40,31 @@
 }
 .post-container main{
     display: grid;
-    height: 100%;
-    margin: 0;
+    margin: 0px 10px;
     padding: 30px 0px;
     justify-content: center;
     border: 0 solid #000;
     box-sizing: border-box;
     flex-direction: column;
-    grid-template-columns: 1200px 600px;
+    grid-template-columns: minmax(240px,800px) minmax(120px,400px);
+    grid-template-rows: 600px;
 }
 main .photo{
     background-color: #000;
-    max-width: 100%;
+    grid-column: 1/2;
     display: flex;
     align-items: center;
-    max-height: 100%;
     position: relative;
     justify-content: center;
-    flex-direction: column;
+    overflow: hidden;
 }
 main .photo img{
-    max-width: 100%;
+    height: 100%;
 }
 main .photo .legtarrow{
     z-index: 3;
     position: absolute;
-    top: 600px;
+    top: 55%;
     left:0px;
     width:20px;
     height: 20px;
@@ -71,8 +72,8 @@ main .photo .legtarrow{
 main .photo .rightarrow{
     z-index: 3;
     position: absolute;
-    top: 600px;
-    left: 1175px;
+    top: 55%;
+    right: 0%;
     width:20px;
     height: 20px;
 }
@@ -84,22 +85,30 @@ main .photo .circle{
 main .comment-container{
     background-color: white;
     display: grid;
-    grid-template-rows: 100px 1050px 60px 60px;
-    grid-template-columns: 600px;
+    grid-template-rows: 40px auto 40px 60px;
+    grid-template-columns:  minmax(120px,400px);
 }
 .comment-container .title{
     display: grid;
-    grid-template-columns: 80px 100px auto;
+    grid-template-columns: 50px 100px auto;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-bottom: 1px solid gainsboro;
+}
+.comment-container .title .titlePhoto{
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    padding-bottom: 10px;
 }
 .comment-container .title img{
     cursor: pointer;
 }
 .comment-container .title li:last-child img{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     transform: rotate(90deg);
 }
 .comment-container .title li:last-child{
@@ -120,21 +129,25 @@ main .comment-container{
 .comment-container .comment li{
     margin-left: 3px;
     margin-right: 3px;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 .comment-container .comment span {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 0.6rem;
 }
 .comment-container .comment .comment-text{
     display: grid;
     grid-template-rows: auto 40px;
 }
+.comment-container .comment .comment-text p{
+    font-size: 0.8rem;
+}
 .comment-container .comment .comment-text .time{
     font-weight: 300;
-    color:var(--text-color)
+    color:var(--text-color);
+    font-size: 0.6rem;
 }
 .comment-container .add-comment{
     margin-top: 10px;
@@ -147,15 +160,16 @@ main .comment-container{
     align-items: center;
 }
 .comment-container .favorite img{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 .comment-container .favorite li{
     margin-left: 15px;
 }
 .comment-container .favorite span{
     font-weight: 400;
-    color:black
+    color:black;
+    font-size: 0.8rem;
 }
 
 .comment-container .add-comment form {
@@ -184,8 +198,23 @@ main .comment-container{
     margin-right: 10px;
     line-height: 1.6;
 }
-.comment-container .add-comment form img {
+.comment-container .add-comment form .userphoto {
     margin-top: 0px;
     height: 45px;
     width: 45px;
+}
+
+@media (max-width:960px) {
+    .post-container main{
+        grid-template-rows: 500px;
+        grid-template-columns: minmax(240px,800px) minmax(120px,400px);
+    }
+}
+@media (max-width:500px) {
+    .post-container main{
+        grid-template-columns: 300px;
+    }
+    .post-container main .photo{
+        display: none;
+    }
 }

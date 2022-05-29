@@ -4,8 +4,8 @@ import { useSignup } from "../../hooks/useSignup";
 
 // styles
 import styles from "./Signup.module.css";
-import Title from "../../assets/title.png";
 import Anonymous from "../../assets/account_photo.svg";
+import Selfie from "../../assets/selfie.png";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -44,8 +44,12 @@ export default function Signup() {
 
   return (
     <>
+      <div className={styles.background}></div>
       <form className={styles["signup-form"]} onSubmit={handleSubmit}>
-        <img src={Title} alt="selfie logo" className={styles.photo} />
+        <div className={styles.photo}>
+          <img src={Selfie} alt="selfie logo" />
+        </div>
+        <p>Sign up to see photos and articles from Anonymous.</p>
         <label>
           <input
             required

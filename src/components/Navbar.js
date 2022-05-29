@@ -4,7 +4,7 @@ import { useState } from "react";
 
 // styles and images
 import styles from "./Navbar.module.css";
-import Title from "../assets/title.png";
+import Selfie from "../assets/selfie.png";
 import Home from "../assets/home.svg";
 import Add from "../assets/add.svg";
 import Favorite from "../assets/favorite.svg";
@@ -34,7 +34,7 @@ export default function Navbar() {
       <ul>
         <li className={styles.logo}>
           <img
-            src={Title}
+            src={Selfie}
             id={styles.logo}
             alt="logo"
             onClick={() => navigate("/")}

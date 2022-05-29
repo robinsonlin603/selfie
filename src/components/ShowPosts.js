@@ -156,12 +156,18 @@ export default function ShowPosts({ post, user }) {
       </div>
       <div className={styles["comment-container"]}>
         <div className={styles.details}>
-          <h4>Category:</h4>
-          <span>{post.category}</span>
-          <h4>Date:</h4>
-          <span>{post.dueDate}</span>
-          <h4>Like:</h4>
-          <span>{post.hearts} people</span>
+          <div className={styles.detailtext}>
+            <h4>Category:</h4>
+            <span>{post.category}</span>
+          </div>
+          <div className={styles.detailtext}>
+            <h4>Date:</h4>
+            <span>{post.dueDate}</span>
+          </div>
+          <div className={styles.detailtext}>
+            <h4>Like:</h4>
+            <span>{post.hearts} people</span>
+          </div>
         </div>
         <div className={styles.caption}>
           <div

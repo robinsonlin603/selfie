@@ -3,6 +3,9 @@
     background-color: white;
     box-sizing: border-box;
     border-bottom: solid gainsboro;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .navbar ul {
     display: flex;
@@ -16,11 +19,11 @@
 }
 .navbar .logo {
     cursor: pointer;
+    margin-left: 20px;
 }
 .navbar #logo {
-    height: 50px;
-    width: 160px;
-    cursor: pointer;
+    width: 45px;
+    height: 25px;
 }
 
 .navbar img{
@@ -36,21 +39,25 @@
     display: inline;
     width: 35px;
     height: 35px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 .navbar .form{
-    margin: 0px 150px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
 }
-
+@media (max-width:700px) {
+    .navbar .form form{
+        display: none;
+    }
+}
 .navbar form{
     display: flex;
-    margin-right: 50px;
+    margin: 0px;
     font-size: 0.8rem;
     width:300px;
     justify-content: flex-end;
-    margin-left: 50px;
 }
-
 .navbar form img{
     position: absolute;
     width: 20px;

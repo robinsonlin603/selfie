@@ -79,16 +79,14 @@ export const useChatFirestore = (collectionName) => {
     ref = doc(ref, id);
 
     try {
-      const updatedDocument = await updateDoc(ref, updates);
+      await updateDoc(ref, updates);
       dispatchIfNotCancelled({
         type: "UPDATE_DOCUMENT",
-        payload: updatedDocument,
+        payload: updates,
       });
-      return updatedDocument;
     } catch (error) {
       console.log(error.message);
       dispatchIfNotCancelled({ type: "ERROR", payload: error.message });
-      return null;
     }
   };
 
@@ -98,15 +96,13 @@ export const useChatFirestore = (collectionName) => {
     dispatch({ type: "IS_PENDING" });
     const createdAt = timestamp.fromDate(new Date());
     try {
-      const addedDocument = await addDoc(postref, { ...doc, createdAt });
+      await addDoc(postref, { ...doc, createdAt });
       dispatchIfNotCancelled({
         type: "ADDED_DOCUMENT",
-        payload: addedDocument,
+        payload: { ...doc, createdAt },
       });
-      return addedDocument;
     } catch (error) {
       dispatchIfNotCancelled({ type: "ERROR", payload: error.message });
-      return null;
     }
   };
 
