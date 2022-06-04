@@ -1,8 +1,7 @@
 .posts-filter {
     margin: 30px auto;
     grid-column: 2/3;
-    position: sticky; 
-    top: 0; 
+    position: sticky;
 }
 
 .posts-filter nav {
@@ -11,6 +10,8 @@
     background-color: #fff;
     border-radius: 4px;
     flex-direction: column;
+    position: fixed; 
+    left: 10%;
 }
 
 .posts-filter p {
@@ -33,11 +34,16 @@
 
 
 @media (max-width:900px) {
+
     .posts-filter nav {
         flex-direction: row;
         width: 650px;
         padding: 10px 0px;
+        position: relative;
+        left: 0;
+        z-index: 3;
     }
+    
     .posts-filter p {
         margin-left: 10px;
     }

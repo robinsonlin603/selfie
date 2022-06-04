@@ -32,7 +32,6 @@ export default function ShowPosts({ post, user }) {
       payload: post,
     });
   };
-
   const plusPic = () => {
     setSelectPicture((prevstate) => prevstate + 1);
   };
@@ -81,7 +80,14 @@ export default function ShowPosts({ post, user }) {
       setNewComment("");
     }
   };
-
+  let images = [];
+  const preLoad = () => {
+    for (let i = 0; i < post.photoURL.length; i++) {
+      images[i] = new Image();
+      images[i].src = post.photoURL[i];
+    }
+  };
+  preLoad();
   return (
     <div className={styles["post-container"]}>
       <div className={styles.title}>
@@ -112,11 +118,13 @@ export default function ShowPosts({ post, user }) {
             onClick={() => minusPic()}
           />
         )}
-        <img
-          className={styles.photo}
-          src={post.photoURL[selectPicture]}
-          alt="updatephoto "
-        />
+        {!(images === []) && (
+          <img
+            className={styles.photo}
+            src={images[selectPicture].src}
+            alt="updatephoto "
+          />
+        )}
         {!(selectPicture === post.photoURL.length - 1) && (
           <img
             className={styles.rightarrow}

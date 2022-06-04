@@ -36,7 +36,6 @@ export default function Conversation() {
       conversation: [...useChatroom[0].conversation, addMessage],
       createdAt: timestamp.fromDate(new Date()),
     });
-    console.log(response);
     if (!response.error) {
       setSendMessage("");
     }

@@ -56,7 +56,6 @@ export const useFirestore = (collectionName) => {
 
   const dispatchIfNotCancelled = (action) => {
     if (!isCancelled) {
-      console.log(action);
       dispatch(action);
     }
   };
@@ -86,7 +85,9 @@ export const useFirestore = (collectionName) => {
       let file = doc.photo[i];
       const fileRef = ref(
         storage,
-        `postsphoto/${auth.currentUser.uid}/${file.name}`
+        `postsphoto/${auth.currentUser.uid}/${file.name}${Math.floor(
+          Math.random() * 100
+        )}`
       );
       await uploadBytes(fileRef, file);
       const url = await getDownloadURL(fileRef);

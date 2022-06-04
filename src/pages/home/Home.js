@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useCollection } from "../../hooks/useCollection";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useElementOnScreen } from "../../hooks/useElementOnScreen";
 
 // styles and images
 import styles from "./Home.module.css";
@@ -13,11 +14,9 @@ export default function Home() {
   const { documents, error } = useCollection("posts", "createdAt");
   const [currentFilter, setCurrentFilter] = useState("all");
   const { user } = useAuthContext();
-
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter);
   };
-
   const posts = documents
     ? documents.filter((document) => {
         switch (currentFilter) {
@@ -38,17 +37,33 @@ export default function Home() {
         }
       })
     : null;
+  console.log("currentfilter", currentFilter);
+  const [containerRef, nextPost] = useElementOnScreen(
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    },
+    posts ? posts.length : null,
+    currentFilter
+  );
 
   return (
     <div className={styles.main}>
       {!documents.length < 1 && (
-        <PostFilter currentFilter={currentFilter} changeFilter={changeFilter} />
+        <div className={styles.filter}>
+          <PostFilter
+            currentFilter={currentFilter}
+            changeFilter={changeFilter}
+          />
+        </div>
       )}
       {!documents.length < 1 && posts && (
         <section>
-          {posts.map((post) => (
-            <ShowPosts post={post} user={user} key={post.id} />
+          {posts.slice(0, nextPost).map((post) => (
+            <ShowPosts post={post} user={user} key={post.id} posts={posts} />
           ))}
+          <div ref={containerRef}></div>
         </section>
       )}
       {error && <div className="error">{error}</div>}

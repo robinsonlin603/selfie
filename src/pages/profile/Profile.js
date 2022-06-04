@@ -15,15 +15,12 @@ import MorePhoto from "../../assets/morephoto.svg";
 
 // components
 import Avatar from "../../components/Avatar";
+import Filter from "./Filter.js";
 
 export default function profile() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { documents, error } = useCollection("posts", "createdAt", [
-    "createBy.id",
-    "==",
-    id,
-  ]);
+  const { documents, error } = useCollection("posts", "createdAt", id);
   const { user } = useAuthContext();
   const [edditClick, setEdditClick] = useState(false);
   const [newIntroduce, setNewIntroduce] = useState(null);
@@ -37,7 +34,7 @@ export default function profile() {
     `members.${id}`,
     `members.${user.uid}`
   );
-
+  const [currentFilter, setCurrentFilter] = useState("all");
   const { dispatch } = usePostContext();
   const { updateDocument } = useFirestore("users");
   const { addDocument, response: chatroomResponse } =
@@ -48,6 +45,29 @@ export default function profile() {
       payload: post,
     });
   };
+  const changeFilter = (newFilter) => {
+    setCurrentFilter(newFilter);
+  };
+  const posts = documents
+    ? documents.filter((document) => {
+        switch (currentFilter) {
+          case "all":
+            return true;
+          case "Selfie":
+            return document.category === currentFilter;
+          case "Trip":
+            return document.category === currentFilter;
+          case "Foodie":
+            return document.category === currentFilter;
+          case "Life":
+            return document.category === currentFilter;
+          case "Else":
+            return document.category === currentFilter;
+          default:
+            return true;
+        }
+      })
+    : null;
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -57,26 +77,38 @@ export default function profile() {
     setEdditClick(false);
   };
   const addFollowing = async () => {
-    currentUserProfile[0].following.push(userProfile[0].id);
+    const addfollowing = {
+      uid: userProfile[0].id,
+      photoURL: userProfile[0].photoURL,
+      displayName: userProfile[0].displayName,
+    };
     await updateDocument(currentUserProfile[0].id, {
-      following: currentUserProfile[0].following,
+      following: [...currentUserProfile[0].following, addfollowing],
     });
-    userProfile[0].followers.push(currentUserProfile[0].id);
+    const addfollower = {
+      uid: currentUserProfile[0].id,
+      photoURL: currentUserProfile[0].photoURL,
+      displayName: currentUserProfile[0].displayName,
+      check: false,
+    };
     await updateDocument(userProfile[0].id, {
-      followers: userProfile[0].followers,
+      followers: [...userProfile[0].followers, addfollower],
     });
   };
   const unFollowing = async () => {
-    currentUserProfile[0].following.splice(userProfile[0].id);
-    await updateDocument(currentUserProfile[0].id, {
-      following: currentUserProfile[0].following,
+    const unfollow = currentUserProfile[0].following.filter((f) => {
+      return f.uid !== userProfile[0].id;
     });
-    userProfile[0].followers.splice(currentUserProfile[0].id);
+    await updateDocument(currentUserProfile[0].id, {
+      following: unfollow,
+    });
+    const unfollower = userProfile[0].follower.filter((f) => {
+      return f.uid !== currentUserProfile[0].id;
+    });
     await updateDocument(userProfile[0].id, {
-      followers: userProfile[0].followers,
+      followers: unfollower,
     });
   };
-
   const sendMessage = async () => {
     if (chatroomProfile.length !== 0) {
       navigate(`/chat/${chatroomProfile[0].id}`);
@@ -95,7 +127,6 @@ export default function profile() {
       }
     }
   };
-
   return (
     <main>
       {error && <p className="error">{error}</p>}
@@ -127,7 +158,9 @@ export default function profile() {
                     <button className="btn" onClick={() => sendMessage()}>
                       Message
                     </button>
-                    {userProfile[0].followers.includes(user.uid) ? (
+                    {userProfile[0].followers.find(
+                      (follower) => follower.uid === user.uid
+                    ) ? (
                       <>
                         {
                           <button
@@ -199,11 +232,14 @@ export default function profile() {
               </li>
             </ul>
           </header>
+          <div className={styles.filter}>
+            <Filter currentFilter={currentFilter} changeFilter={changeFilter} />
+          </div>
           <section>
             {documents.length === 0 && (
               <div className={styles.first}>No Post</div>
             )}
-            {documents.map((post) => (
+            {posts.map((post) => (
               <div
                 className={styles.post}
                 key={post.id}

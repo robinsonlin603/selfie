@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 // firebase imports
 import {
@@ -17,18 +17,15 @@ export const useCollection = (collectionName, _orderBy, _query) => {
 
   // set up query
 
-  const order = useRef(_orderBy).current;
-  const q = useRef(_query).current;
-
   useEffect(() => {
     let ref = collection(db, collectionName);
 
-    if (order) {
-      ref = query(ref, orderBy(order, "desc"));
+    if (_orderBy) {
+      ref = query(ref, orderBy(_orderBy, "desc"));
     }
 
-    if (q) {
-      ref = query(ref, where(...q));
+    if (_query) {
+      ref = query(ref, where("createBy.id", "==", _query));
     }
     setIsPending(true);
 
@@ -53,7 +50,7 @@ export const useCollection = (collectionName, _orderBy, _query) => {
     );
 
     return () => unsub();
-  }, [collectionName, order, q]);
+  }, [collectionName, _orderBy, _query]);
 
   return { documents, error, isPending };
 };

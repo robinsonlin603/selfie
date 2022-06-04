@@ -39,7 +39,7 @@ export default function NewPosts({ setClickAddPost }) {
       setThumbnailError("Selected file must have an image");
       return;
     }
-    if (selected.length > 12) {
+    if (selected.length > 6) {
       setThumbnailError("upload photo must less than twelve");
       return;
     }

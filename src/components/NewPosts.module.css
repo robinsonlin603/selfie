@@ -42,6 +42,7 @@
     flex-shrink: 1;
     justify-content: center;
     display: flex;
+    z-index: 100;
 }
 
 .posts .create-form .form{
@@ -68,6 +69,7 @@
     flex-direction: column;
     width: 527px;
     padding: 0px 10px;
+    justify-content: flex-end;
 }
 .form form .uploadphoto{
     cursor: pointer;

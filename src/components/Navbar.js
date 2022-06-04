@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useState } from "react";
+import { usePostCollection } from "../hooks/usePostCollection";
 
 // styles and images
 import styles from "./Navbar.module.css";
@@ -9,25 +10,27 @@ import Home from "../assets/home.svg";
 import Add from "../assets/add.svg";
 import Favorite from "../assets/favorite.svg";
 import Chat from "../assets/chat.svg";
-import Search from "../assets/search.png";
 
 // components
 import Avatar from "./Avatar";
 import ProflieList from "./ProfileList";
 import NewPosts from "./NewPosts";
+import SearchData from "./SearchData";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const { user } = useAuthContext();
   const [clickProfile, setClickProfile] = useState(false);
   const [clickAddPost, setClickAddPost] = useState(false);
-  const [searchId, setSearchId] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(searchId);
-  };
-
+  const { documents: currentUserProfile } = usePostCollection(
+    "users",
+    user.uid
+  );
+  const number = currentUserProfile
+    ? currentUserProfile[0].followers.filter((follower) => {
+        return follower.check === false;
+      })
+    : null;
   return (
     <div className={styles.navbar}>
       {clickAddPost && <NewPosts setClickAddPost={setClickAddPost} />}
@@ -41,20 +44,7 @@ export default function Navbar() {
           />
         </li>
         <div className={styles.form}>
-          <form onSubmit={handleSubmit}>
-            <img
-              src={Search}
-              alt="search icon "
-              onClick={() => navigate("/")}
-            ></img>
-            <input
-              type="text"
-              onChange={(e) => setSearchId(e.target.value)}
-              required
-              placeholder="Search"
-            />
-            <button></button>
-          </form>
+          <SearchData />
         </div>
         <li>
           <img
@@ -80,8 +70,16 @@ export default function Navbar() {
             onClick={() => setClickAddPost(!clickAddPost)}
           />
         </li>
-        <li>
-          <img src={Favorite} alt="Favorite icon" className={styles.photo} />
+        <li className={styles.friend}>
+          <img
+            src={Favorite}
+            alt="Favorite icon"
+            className={styles.photo}
+            onClick={() => navigate("/friendlist")}
+          />
+          {number && number.length > 0 ? (
+            <div className={styles.circle}>{number.length}</div>
+          ) : null}
         </li>
         <li
           className={styles.profile}

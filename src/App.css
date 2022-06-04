@@ -6,3 +6,16 @@
   flex-grow: 1;
   flex-direction: column  ;
 }
+.App .container footer{
+  display: flex;
+  margin-top: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 0.6rem;
+}
+.App .container footer img{
+  width: 20px;
+  height: 20px;
+}

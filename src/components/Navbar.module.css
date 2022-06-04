@@ -34,45 +34,36 @@
     width: 35px;
     height: 35px;
 }
-
+.navbar .circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 18px;
+    margin-left: 18px;
+    border-radius: 10px;
+    background-color:var(--primary-color);
+    text-align: center;
+    font-size: 0.8rem;
+}
 .navbar .profile {
     display: inline;
     width: 35px;
     height: 35px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .navbar .form{
     display: flex;
     flex-grow: 1;
     justify-content: center;
 }
+.navbar .friend{
+    display: flex;
+    padding-bottom: 8px;
+}
 @media (max-width:700px) {
-    .navbar .form form{
+    .navbar .form .SearchData{
         display: none;
     }
 }
-.navbar form{
-    display: flex;
-    margin: 0px;
-    font-size: 0.8rem;
-    width:300px;
-    justify-content: flex-end;
-}
-.navbar form img{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    padding-top: 6px;
-    padding-right: 10px;
-    cursor: pointer;
-    z-index: 3;
-}
 
-.navbar form button{
-    position: absolute;
-    width: 40px;
-    height: 33px;
-    background-color: transparent;
-    border: none;
-}
 

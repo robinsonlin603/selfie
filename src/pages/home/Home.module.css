@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 200px 700px 1fr;
     justify-items: center;
+    position: relative;
 }
 .main section{
     grid-column: 3/4;
@@ -17,8 +18,17 @@
     }
     .main section{
         grid-column: 2/3;
-        margin-top: 0px;
+        grid-row: 2/3;
+        margin-top: 100px;
     }
+    .main .filter{
+        display: flex;
+        grid-column: 2/3;
+        position: fixed;
+        top: 33px;
+        z-index: 3;
+    }
+    
 }
 @media (max-width:650px) {
     .main{

@@ -3,6 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useChatCollection } from "../../hooks/useChatCollection";
 import { usePostCollection } from "../../hooks/usePostCollection";
 import { useState } from "react";
+
 // styles and images
 import styles from "./Chat.module.css";
 import Forum from "../../assets/forum.svg";
@@ -11,6 +12,7 @@ import Send from "../../assets/send.svg";
 // components
 import PostCard from "./PostCard";
 import PostName from "./PostName";
+import SwitchPostCard from "./SwitchPostCard";
 
 export default function Chat() {
   const { user } = useAuthContext();
@@ -75,10 +77,11 @@ export default function Chat() {
               </div>
               <div className={styles.switchfriendlist}>
                 {documents.map((document) => (
-                  <PostCard
+                  <SwitchPostCard
                     setChangeChat={setChangeChat}
                     key={document.id}
                     chatroomId={document.id}
+                    changeChat={changeChat}
                     member={Object.keys(document.members).filter((m) => {
                       return m !== user.uid;
                     })}

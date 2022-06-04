@@ -19,6 +19,7 @@ import Profile from "./pages/profile/Profile";
 import Post from "./components/Post";
 import Chat from "./pages/chat/Chat";
 import Conversation from "./pages/chat/Conversation";
+import Friendlist from "./pages/friendlist/Friendlist";
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -39,6 +40,10 @@ function App() {
               <Route
                 path="/profile/:id"
                 element={user ? <Profile /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/friendlist"
+                element={user ? <Friendlist /> : <Navigate to="/login" />}
               />
               <Route
                 path="/chat"
