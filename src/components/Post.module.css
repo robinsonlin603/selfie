@@ -113,15 +113,17 @@ main .comment-container{
 .comment-container .title li:last-child{
     justify-self: end;
     padding-right: 20px;
+    display: flex;
 }
 .comment-container .title .more{
     display: flex;
     flex-direction: column;
     position: absolute;
+    margin-top: 30px;
+    margin-left: -80px;
     width: 120px;
     height: 80px;
     background-color: var(--text-color);
-    right: 20px;
     border-radius: 6px;
     padding-top: 5px;
 }
@@ -258,11 +260,43 @@ main .comment-container{
         grid-template-columns: minmax(240px,800px) minmax(120px,400px);
     }
 }
+
+@media (max-width:910px) {
+    .comment-container .comment .comment-text form button{
+        margin-left:180px;
+    }
+    .comment-container .comment .comment-text form label{
+        width: 99%;
+    }
+}
+@media (max-width:740px) {
+    .comment-container .comment .comment-text form button{
+        margin-left:22%;
+    }
+}
+@media (max-width:650px) {
+    .comment-container .comment .comment-text form button{
+        margin-left:20%;
+    }
+}
+@media (max-width:600px) {
+    .comment-container .comment .comment-text form button{
+        margin-left:18%;
+    }
+}
+@media (max-width:560px) {
+    .comment-container .comment .comment-text form button{
+        margin-left:15%;
+    }
+}
 @media (max-width:500px) {
     .post-container main{
         grid-template-columns: 300px;
     }
     .post-container main .photo{
         display: none;
+    }
+    .comment-container .comment .comment-text form button{
+        margin-left:180px;
     }
 }
