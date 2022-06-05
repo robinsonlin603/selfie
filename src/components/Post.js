@@ -26,9 +26,12 @@ export default function Post({ postInfo }) {
   const { user } = useAuthContext();
   const [selectPicture, setSelectPicture] = useState(0);
   const [newComment, setNewComment] = useState("");
-  const { updateDocument, response } = useFirestore("posts");
+  const { updateDocument, response, deleteDocument } = useFirestore("posts");
+  const [eddit, setEddit] = useState(false);
+  const [showOption, setShowOption] = useState(false);
   const { dispatch } = usePostContext();
   const { documents } = usePostCollection("posts", postInfo.id);
+  const [newCaption, setNewCaption] = useState(null);
   const onClickClose = () => {
     dispatch({
       type: "CLOSE",
@@ -81,7 +84,24 @@ export default function Post({ postInfo }) {
       setNewComment("");
     }
   };
+  const handleDelete = async () => {
+    dispatch({
+      type: "CLOSE",
+    });
+    await deleteDocument(postInfo.id);
+  };
+  const handleEdit = async () => {
+    setEddit(!eddit);
+    setShowOption(!showOption);
+  };
+  const handleCaptionSubmit = async (e) => {
+    e.preventDefault();
 
+    await updateDocument(documents[0].id, {
+      caption: newCaption,
+    });
+    setEddit(false);
+  };
   return (
     <div className={styles["post-container"]}>
       {documents && (
@@ -136,7 +156,20 @@ export default function Post({ postInfo }) {
                 </li>
                 <li>{documents[0].createBy.displayName}</li>
                 <li>
-                  <img src={More} alt="More icon" />
+                  {postInfo.createBy.id === user.uid && (
+                    <img
+                      src={More}
+                      alt="More icon"
+                      onClick={() => setShowOption(!showOption)}
+                    />
+                  )}
+                  {showOption && (
+                    <ul className={styles.more}>
+                      <li onClick={() => handleEdit()}>Edit</li>
+                      <li onClick={() => handleDelete()}>Delete</li>
+                      <li onClick={() => setShowOption(false)}>Cancel</li>
+                    </ul>
+                  )}
                 </li>
               </ul>
               <ul className={styles.comment}>
@@ -148,10 +181,29 @@ export default function Post({ postInfo }) {
                     />
                   </li>
                   <div className={styles["comment-text"]}>
-                    <p>
-                      <span>{documents[0].createBy.displayName} </span>
-                      {documents[0].caption}
-                    </p>
+                    {!eddit && (
+                      <p>
+                        <span>{documents[0].createBy.displayName} </span>
+                        {documents[0].caption}
+                      </p>
+                    )}
+                    {eddit && (
+                      <form onSubmit={handleCaptionSubmit}>
+                        <label>
+                          <textarea
+                            required
+                            type="text"
+                            defaultValue={documents[0].caption}
+                            onChange={(e) =>
+                              e.target.value
+                                ? setNewCaption(e.target.value)
+                                : setNewCaption(documents[0].caption)
+                            }
+                          />
+                        </label>
+                        <button className="btn">Submit</button>
+                      </form>
+                    )}
                     <div className={styles.time}>
                       {formatDistanceToNow(documents[0].createdAt.toDate(), {
                         addSuffix: true,

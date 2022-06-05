@@ -3,10 +3,10 @@ import { useLogout } from "../hooks/useLogout";
 
 // styles and images
 import styles from "./ProfileList.module.css";
-import Switch from "../assets/switch.svg";
+// import Switch from "../assets/switch.svg";
 import Profile from "../assets/profile.svg";
-import Saved from "../assets/saved.svg";
-import Setting from "../assets/setting.svg";
+// import Saved from "../assets/saved.svg";
+// import Setting from "../assets/setting.svg";
 
 export default function ProflieList({ user }) {
   const { logout, isPending } = useLogout();
@@ -24,7 +24,7 @@ export default function ProflieList({ user }) {
           <img src={Profile} alt="Profile icon" />
           <span>Profile</span>
         </Link>
-        <Link to="/" className={styles.item}>
+        {/* <Link to="/" className={styles.item}>
           <img src={Saved} alt="Saved icon" />
           <span>Saved</span>
         </Link>
@@ -35,7 +35,7 @@ export default function ProflieList({ user }) {
         <Link to="/" className={styles.item}>
           <img src={Switch} alt="Switch icon" />
           <span>Switch Account</span>
-        </Link>
+        </Link> */}
         <hr />
         {!isPending && (
           <div className={styles.item} onClick={logout}>

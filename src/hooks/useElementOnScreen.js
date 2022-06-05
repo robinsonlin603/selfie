@@ -7,21 +7,20 @@ export const useElementOnScreen = (options, amount, currentFilter) => {
 
   useEffect(() => {
     let observerRefValue = null;
+
     const addDatas = (entries) => {
       const [entry] = entries;
       if (filter !== currentFilter) {
-        console.log("not same filter");
         setNextPost(1);
         setFilter(currentFilter);
+        observer.unobserve(containerRef.current);
         return;
       }
       if (nextPost >= amount) {
-        console.log("too many");
         observer.unobserve(containerRef.current);
         return;
       }
       if (entry.isIntersecting) {
-        console.log("succed");
         setNextPost(nextPost + 1);
         observer.unobserve(containerRef.current);
         observerRefValue = containerRef.current;

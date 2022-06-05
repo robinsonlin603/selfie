@@ -81,6 +81,7 @@
     height: 20px;
     position: relative;
     padding-left: 40px;
+    padding-top: 10px;
 }
 .form form .uploadphoto span{
     padding-top: 6px;

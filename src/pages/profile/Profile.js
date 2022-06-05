@@ -102,7 +102,7 @@ export default function profile() {
     await updateDocument(currentUserProfile[0].id, {
       following: unfollow,
     });
-    const unfollower = userProfile[0].follower.filter((f) => {
+    const unfollower = userProfile[0].followers.filter((f) => {
       return f.uid !== currentUserProfile[0].id;
     });
     await updateDocument(userProfile[0].id, {

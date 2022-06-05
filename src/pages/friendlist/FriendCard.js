@@ -53,7 +53,7 @@ export default function FriendCard({ follow, documents }) {
       >
         <Avatar src={follow.photoURL} />
       </li>
-      <li>
+      <li onClick={() => navigate(`/profile/${users[0].id}`)}>
         <p>{follow.displayName}</p>
       </li>
       <li>

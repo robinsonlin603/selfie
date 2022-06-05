@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 // styles and images
 import styles from "./ShowPosts.module.css";
-import More from "../assets/more.svg";
+// import More from "../assets/more.svg";
 import Left from "../assets/btn_leftArrow.png";
 import Right from "../assets/btn_rightArrow.png";
 import Heart from "../assets/heart.svg";
@@ -21,7 +21,7 @@ import { timestamp } from "../firebase/config";
 export default function ShowPosts({ post, user }) {
   const [selectPicture, setSelectPicture] = useState(0);
   const [showMore, setShowMore] = useState(false);
-  const [showOption, setShowOption] = useState(false);
+  // const [showOption, setShowOption] = useState(false);
   const [newComment, setNewComment] = useState("");
   const { updateDocument, response } = useFirestore("posts");
   const { dispatch } = usePostContext();
@@ -100,14 +100,14 @@ export default function ShowPosts({ post, user }) {
             <div>{post.location}</div>
           </div>
         </header>
-        <div className={styles.option}>
+        {/* <div className={styles.option}>
           <img
             src={More}
             alt="more icon"
             onClick={() => setShowOption(!showOption)}
           />
           {showOption && <div className={styles.try}>hello</div>}
-        </div>
+        </div> */}
       </div>
       <div className={styles["photo-container"]}>
         {!(selectPicture === 0) && (

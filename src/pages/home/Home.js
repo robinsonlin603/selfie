@@ -37,7 +37,6 @@ export default function Home() {
         }
       })
     : null;
-  console.log("currentfilter", currentFilter);
   const [containerRef, nextPost] = useElementOnScreen(
     {
       root: null,
