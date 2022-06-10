@@ -1,0 +1,166 @@
+.chatroom{
+    display: grid;
+    grid-template-columns: 1.5fr 350px 600px 2fr;
+    grid-template-rows: 60px 650px;
+}
+.chatroom .user{
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: white;
+    border: 1px solid gainsboro;
+    align-items: center;
+    list-style: none;
+}
+.chatroom .user li{
+    display: flex;
+    justify-self: end;
+    width: 90px;
+    justify-content: flex-end;
+}
+.chatroom .user li:last-child{
+    width: 100%;
+    margin-right: 10px;
+}
+.chatroom .user img{
+    height: 35px;
+    width: 35px;
+}
+
+.chatroom .friend{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    background-color: white;
+    border: 1px solid gainsboro;
+}
+.chatroom .only{
+    grid-column: 3/4;
+    grid-row: 1/3;
+    background-color: white;
+    border: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.chatroom .only img{
+    transform: rotate(-40deg);
+    width: 50px;
+    height: 50px;
+}
+.chatroom .only h2{
+    color: var(--text-color);
+    font-weight: 400;
+}
+.chatroom .only p{
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.chatroom .friendlist{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: white;
+    border: 1px solid gainsboro;
+    display:flex;
+    flex-direction: column;
+}
+.chatroom .useroom{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-color: white;
+    border: 1px solid gainsboro;
+}
+.chatroom .switchuser{
+    display: none;
+}
+.chatroom .switchfriendlist{
+    display: none;
+}
+.chatroom .switchfriend{
+    display: none;
+}
+.chatroom .switchuseroom{
+    display: none;
+}
+
+@media (max-width:950px) {
+    .chatroom{
+        grid-template-columns:1fr 180Px 470px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+}
+
+@media (max-width:650px) {
+    .chatroom{
+        grid-template-columns:1fr 180Px 250px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+}
+@media (max-width:450px) {
+    .chatroom{
+        display: grid;
+        grid-template-columns: 1fr 300px 1fr;
+        grid-template-rows: 60px 650px;
+    }
+    .chatroom .user{
+        display: none;
+    }
+    .chatroom .friend{
+        display: none;
+    }
+    .chatroom .friendlist{
+        display: none;
+    }
+    .chatroom .useroom{
+        display: none;
+    }
+    .chatroom .only{
+        display: none;
+    }
+    .chatroom .switchuser{
+        display: flex;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: white;
+        border: 1px solid gainsboro;
+        align-items: center;
+        list-style: none;
+    }
+    .chatroom .switchuser li{
+        display: flex;
+        justify-self: end;
+        width: 150px;
+        justify-content: flex-end;
+    }
+    .chatroom .switchuser li:last-child{
+        margin-right: 10px;
+    }
+    .chatroom .switchuser img{
+        height: 35px;
+        width: 35px;
+    }
+    .chatroom .switchfriendlist{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display:flex;
+        flex-direction: column;
+    }
+    .chatroom .switchfriend{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display:flex;
+        flex-direction: column;
+    }
+    .chatroom .switchuseroom{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: white;
+        border: 1px solid gainsboro;
+        display: block;
+    }
+}

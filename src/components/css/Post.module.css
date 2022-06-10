@@ -1,0 +1,278 @@
+.post-container{
+    display: grid;
+    grid-template-rows: 30px auto;
+    background-color: rgba(0,0,0,.65);
+    bottom: 0;
+    left: 0;
+    position: fixed  ;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+}
+.post-container .close{
+    grid-row: 1/2;
+    z-index: 1;
+    justify-self: flex-end;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.post-container .close button{
+    align-items: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.post-container .close .closeIcon{
+    align-items: center;
+    justify-content: center;
+}
+
+.post-container .close .closeIcon img{
+    filter: invert(1);
+    height: 40px;
+    width: 40px;
+}
+.post-container main{
+    display: grid;
+    margin: 0px 10px;
+    padding: 30px 0px;
+    justify-content: center;
+    border: 0 solid #000;
+    box-sizing: border-box;
+    flex-direction: column;
+    grid-template-columns: minmax(240px,800px) minmax(120px,400px);
+    grid-template-rows: 600px;
+}
+main .photo{
+    background-color: #000;
+    grid-column: 1/2;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+}
+main .photo img{
+    height: 100%;
+}
+main .photo .leftarrow{
+    z-index: 3;
+    position: absolute;
+    top: 55%;
+    left:0px;
+    width:20px;
+    height: 20px;
+}
+main .photo .rightarrow{
+    z-index: 3;
+    position: absolute;
+    top: 55%;
+    right: 0%;
+    width:20px;
+    height: 20px;
+}
+main .photo .circle{
+    display: flex;
+    position: absolute;
+    bottom: 15px;
+}
+main .comment-container{
+    background-color: white;
+    display: grid;
+    grid-template-rows: 40px auto 40px 60px;
+    grid-template-columns:  minmax(120px,400px);
+}
+.comment-container .title{
+    display: grid;
+    grid-template-columns: 50px 100px auto;
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 1px solid gainsboro;
+}
+.comment-container .title .titlePhoto{
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-left: 3px;
+}
+.comment-container .title img{
+    cursor: pointer;
+}
+.comment-container .title li:last-child img{
+    width: 25px;
+    height: 25px;
+    transform: rotate(90deg);
+}
+.comment-container .title li:last-child{
+    justify-self: end;
+    padding-right: 20px;
+    display: flex;
+}
+.comment-container .title .more{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -80px;
+    width: 120px;
+    height: 80px;
+    background-color: var(--text-color);
+    border-radius: 6px;
+    padding-top: 5px;
+    z-index: 3;
+}
+.comment-container .title .more li{
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-weight: 300;
+}
+.comment-container .title .more li:nth-child(2){
+    color: red;
+}
+.comment-container .title .more li:last-child{
+    padding-right: 0px;
+    border-bottom: none;
+    display: block;
+}
+
+.comment-container .comment{    
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gainsboro;
+    overflow-x: scroll;
+}
+.comment-container .comment .comment-photo{
+    display: flex ;
+    flex-direction: row;
+    list-style: none;
+}
+.comment-container .comment li{
+    margin-left: 3px;
+    margin-right: 3px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.comment-container .comment span {
+    font-weight: 500;
+    font-size: 0.6rem;
+}
+.comment-container .comment .comment-text{
+    display: grid;
+    grid-template-rows: auto 20px;
+    flex-grow: 1;
+    margin-right: 10px;
+    
+}
+.comment-container .comment .comment-text p{
+    font-size: 0.8rem;
+}
+.comment-container .comment .comment-text .time{
+    font-weight: 300;
+    color:var(--text-color);
+    font-size: 0.6rem;
+}
+.comment-container .comment .comment-text form{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+.comment-container .comment .comment-text form button{
+    position: absolute;
+    margin-top: 25px;
+    margin-right: 10px;
+    height: 30px;
+    padding: 0px 12px;  
+}
+.comment-container .comment .comment-text form label{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px;
+}
+.comment-container .comment .comment-text form label textarea{
+    display: block;
+    width: 100%;
+    resize: none;
+    min-height: 40px;
+    line-height: 20px;
+    padding-right: 100px;
+}
+.comment-container .add-comment{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comment-container .favorite{
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.comment-container .favorite img{
+    width: 25px;
+    height: 25px;
+}
+.comment-container .favorite li{
+    margin-left: 15px;
+}
+.comment-container .favorite span{
+    font-weight: 400;
+    color:black;
+    font-size: 0.8rem;
+}
+
+.comment-container .add-comment form {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding-left: 16px;
+    border: 0px;
+    font-size: 0.8rem;
+}
+
+.comment-container .add-comment form input{
+    border: none ;
+    padding: 0px 0px 5px 10px;
+}
+
+.comment-container .add-comment form input:focus{
+    outline:none;
+}
+
+.comment-container .add-comment form button{
+    height: 30px;
+    width: 100px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    line-height: 1.6;
+}
+.comment-container .add-comment form .userphoto {
+    margin-top: 0px;
+    height: 45px;
+    width: 45px;
+}
+
+@media (max-width:960px) {
+    .post-container main{
+        grid-template-rows: 500px;
+        grid-template-columns: minmax(240px,800px) minmax(120px,400px);
+    }
+}
+
+@media (max-width:500px) {
+    .post-container main{
+        grid-template-columns: 300px;
+    }
+    .post-container main .photo{
+        display: none;
+    }
+}

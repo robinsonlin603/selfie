@@ -11,16 +11,16 @@ import { usePostContext } from "./hooks/usePostContext";
 import "./App.css";
 
 // pages and components
-import Login from "./pages/login/Login";
-import Signup from "./pages/signup/Signup";
-import Home from "./pages/home/Home";
-import Navbar from "./components/Navbar";
-import Profile from "./pages/profile/Profile";
-import Post from "./components/Post";
-import Chat from "./pages/chat/Chat";
-import Conversation from "./pages/chat/Conversation";
-import Friendlist from "./pages/friendlist/Friendlist";
-import Introduce from "./pages/introduce/Introduce";
+import Login from "./pages/login/js/Login";
+import Signup from "./pages/signup/js/Signup";
+import Home from "./pages/home/js/Home";
+import Navbar from "./components/js/Navbar";
+import Profile from "./pages/profile/js/Profile";
+import Post from "./components/js/Post";
+import Chat from "./pages/chat/js/Chat";
+import Conversation from "./pages/chat/js/Conversation";
+import Friendlist from "./pages/friendlist/js/Friendlist";
+import Introduce from "./pages/introduce/js/Introduce";
 
 function App() {
   const { authIsReady, user } = useAuthContext();
