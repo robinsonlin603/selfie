@@ -8,8 +8,8 @@ import styles from "./Navbar.module.css";
 import Selfie from "../assets/selfie.png";
 import Home from "../assets/home.svg";
 import Add from "../assets/add.svg";
-import Favorite from "../assets/favorite.svg";
 import Chat from "../assets/chat.svg";
+import Group from "../assets/group.svg";
 
 // components
 import Avatar from "./Avatar";
@@ -56,24 +56,24 @@ export default function Navbar() {
         </li>
         <li>
           <img
-            src={Chat}
-            alt="Chat icon"
-            className={styles.photo}
-            onClick={() => navigate("/chat")}
-          />
-        </li>
-        <li>
-          <img
             src={Add}
             alt="Add icon"
             className={styles.photo}
             onClick={() => setClickAddPost(!clickAddPost)}
           />
         </li>
+        <li>
+          <img
+            src={Chat}
+            alt="Chat icon"
+            className={styles.photo}
+            onClick={() => navigate("/chat")}
+          />
+        </li>
         <li className={styles.friend}>
           <img
-            src={Favorite}
-            alt="Favorite icon"
+            src={Group}
+            alt="Group icon"
             className={styles.photo}
             onClick={() => navigate("/friendlist")}
           />

@@ -6,11 +6,13 @@
     margin-top: 10px;
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
     gap: 30px;
 }
 .friendlist-container .friendlist h4{
     font-weight: 500;
+    margin-bottom: 20px;
 }
 .friendlist-container .friendlist span{
     font-weight: 300;
@@ -20,12 +22,31 @@
     flex-direction: column;
     margin-left: 10px;
 }
+.friendlist-container .friendlist .cardcontainer{
+    display: grid;
+    grid-template-columns: repeat(4,230px);
+    margin-left: 10px;
+    gap: 30px;
+}
 .friendlist-container .friendlist .followers{
     display: flex;
     flex-direction: column;
 }
 .friendlist-container .switchfriendlist{
     display: none;
+}
+@media (max-width:1050px) {
+    .friendlist-container .friendlist .cardcontainer{
+        grid-template-columns: repeat(4,210px);
+        margin-left: 10px;
+        gap: 20px;
+    }
+}
+@media (max-width:930px) {
+    .friendlist-container .friendlist .cardcontainer{
+        grid-template-columns: repeat(3,210px);
+        gap: 20px;
+    }
 }
 @media (max-width:700px) {
     .friendlist-container .friendlist{

@@ -7,15 +7,14 @@ import styles from "./Login.module.css";
 import Selfie from "../../assets/selfie.png";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("cat@cat.com");
+  const [password, setPassword] = useState("123456789");
   const { login, isPending, error } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
   };
-
   return (
     <>
       <div className={styles.background}></div>
@@ -28,8 +27,8 @@ export default function Login() {
           <input
             required
             type="email"
+            defaultValue="cat@cat.com"
             onChange={(e) => setEmail(e.target.value)}
-            value={email}
             placeholder="email"
           />
         </label>
@@ -38,7 +37,7 @@ export default function Login() {
             required
             type="password"
             onChange={(e) => setPassword(e.target.value)}
-            value={password}
+            defaultValue="123456789"
             placeholder="password"
           />
         </label>

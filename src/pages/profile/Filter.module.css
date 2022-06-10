@@ -19,12 +19,16 @@
 .posts-filter button {
     border: 0;
     background-color: var(--bg-color);
-    margin-left: 10px;
+    margin-left: 25px;
     font-family: inherit;
     font-weight: bold;
     color: var(--text-color);
     cursor: pointer;
 }
 
-
+@media (max-width:600px) {
+    .posts-filter button {
+        margin-left: 15px;
+    }
+}
 

@@ -1,22 +1,26 @@
 .friendcard {
-    background-color: white;
-    width: 310px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 2.5fr;
-    padding: 0px 10px;
-    height: 50px;
-    align-items: center;
-    margin-top:10px;
+    width: 200px;
+    height: 250px;
+    background: #07182E;
+    border-radius: 5px;
+    text-align: center;
+    color: #f0f0f0;
 }
 .friendcard .photo{
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
     display: flex;
-}
-.friendcard li:nth-child(2){
+    margin: 60px auto 10px auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    z-index: 99;
+    background-color: #152f50;
     cursor: pointer;
 }
+
 .friendcard li:last-child{
     justify-self:end;
 }
@@ -28,11 +32,30 @@
     cursor: pointer;
     font-size: 1em;
     border: 1px solid var(--primary-color);
+    opacity: 0;
+    transition: all 0.5s;
+    margin-top: 10px;
 }
 .friendcard .new{
     position: absolute;
-    margin-bottom: 45px;
-    margin-left: -20px;
+    margin-top: 10px;
+    margin-left: 7px;
     transform: rotate(-40deg);  
     color: red;  
+}
+.friendcard:hover {
+    transform: rotate(2deg);  
+}
+.friendcard:hover .photo {
+    transform: scale(1.1);
+    border: 1px solid #f0f0f0;
+}
+.friendcard:hover .btn{
+    opacity: 1;
+}
+
+@media (max-width:700px) {
+    .friendcard {
+        margin-top: 10px;
+    }
 }

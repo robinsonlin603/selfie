@@ -3,7 +3,6 @@
     border-radius: 6px;
     box-shadow: 0 0 5px 1px rgba(var(--jb7,0,0,0),.0975);
     position: absolute;
-    z-index: 3;
     display: flex;
     margin-top: 10px;
 }
@@ -22,11 +21,11 @@
 .dataResult .square {
     background: rgba(var(--d87,255,255,255),1);
     border-radius: 6px;
-    position: relative;
     padding-top: 10px;
     width: 300px;
     display: flex;
     flex-direction: column;
+    z-index: 4;
 }
 .dataResult .square .rightId{
     cursor: pointer;
@@ -66,7 +65,35 @@
 }
 
 @media (max-width:700px) {
-    .searchbar{
+    .searchInput{
+        width:150px;
+    }
+    .dataResult{
+        margin-left: -40px;
+    }
+}
+@media (max-width:460px) {
+    .searchInput{
+        width:80px;
+    }
+    .dataResult{
+        margin-left: -90px;
+    }
+    .dataResult .square {
+        width: 200px;
+    }
+}
+@media (max-width:460px) {
+    .searchInput{
+        width:60px;
+    }
+    .searchInput img{
         display: none;
+    }
+    .dataResult{
+        margin-left: -40px;
+    }
+    .dataResult .triangle {
+        margin-left:50px;
     }
 }

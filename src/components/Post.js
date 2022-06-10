@@ -102,6 +102,10 @@ export default function Post({ postInfo }) {
     });
     setEddit(false);
   };
+  const handleCancel = () => {
+    setEddit(false);
+    setShowOption(false);
+  };
   return (
     <div className={styles["post-container"]}>
       {documents && (
@@ -117,7 +121,7 @@ export default function Post({ postInfo }) {
             <div className={styles.photo}>
               {!(selectPicture === 0) && (
                 <img
-                  className={styles.legtarrow}
+                  className={styles.leftarrow}
                   src={Left}
                   alt="left"
                   onClick={() => minusPic()}
@@ -167,7 +171,7 @@ export default function Post({ postInfo }) {
                     <ul className={styles.more}>
                       <li onClick={() => handleEdit()}>Edit</li>
                       <li onClick={() => handleDelete()}>Delete</li>
-                      <li onClick={() => setShowOption(false)}>Cancel</li>
+                      <li onClick={() => handleCancel()}>Cancel</li>
                     </ul>
                   )}
                 </li>

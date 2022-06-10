@@ -43,6 +43,12 @@
     border-radius: 50%;
     margin-top: 50px;
 }
+.postcard-container:hover .photo{
+    transform: scale(1.1);
+}
+.postcard-container:hover h4{
+    color: #0ebb50;
+}
 @media (max-width:950px) {
     .postcard-container{
         height: 70px;

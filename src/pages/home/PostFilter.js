@@ -11,19 +11,14 @@ export default function PostFilter({ currentFilter, changeFilter }) {
   return (
     <div className={styles["posts-filter"]}>
       <nav>
-        <p>Filter by：</p>
+        <p>Filter by</p>
         {filterList.map((f) => (
           <button
             key={f}
             onClick={() => handleClick(f)}
-            style={
-              currentFilter === f
-                ? { color: "var(--primary-color)" }
-                : { color: "" }
-            }
-          >
-            {f}
-          </button>
+            data-content={f}
+            className={currentFilter === f ? styles.clickbutton : styles.button}
+          ></button>
         ))}
       </nav>
     </div>

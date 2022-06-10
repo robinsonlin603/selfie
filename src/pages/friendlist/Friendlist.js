@@ -22,22 +22,8 @@ export default function Friendlist() {
               <h4>
                 {documents[0].following.length} <span>following</span>
               </h4>
-              {documents[0].following.map((follow) => {
-                return (
-                  <FriendCard
-                    follow={follow}
-                    key={follow.uid}
-                    documents={documents}
-                  />
-                );
-              })}
-            </div>
-            <div className={styles.followers}>
-              <h4>
-                {documents[0].followers.length} <span>followers</span>
-              </h4>
-              {documents[0].followers.map((follow) => {
-                if (follow.check) {
+              <div className={styles.cardcontainer}>
+                {documents[0].following.map((follow) => {
                   return (
                     <FriendCard
                       follow={follow}
@@ -45,16 +31,34 @@ export default function Friendlist() {
                       documents={documents}
                     />
                   );
-                } else {
-                  return (
-                    <NewFriendCard
-                      follow={follow}
-                      key={follow.uid}
-                      documents={documents}
-                    />
-                  );
-                }
-              })}
+                })}
+              </div>
+            </div>
+            <div className={styles.followers}>
+              <h4>
+                {documents[0].followers.length} <span>followers</span>
+              </h4>
+              <div className={styles.cardcontainer}>
+                {documents[0].followers.map((follow) => {
+                  if (follow.check) {
+                    return (
+                      <FriendCard
+                        follow={follow}
+                        key={follow.uid}
+                        documents={documents}
+                      />
+                    );
+                  } else {
+                    return (
+                      <NewFriendCard
+                        follow={follow}
+                        key={follow.uid}
+                        documents={documents}
+                      />
+                    );
+                  }
+                })}
+              </div>
             </div>
           </div>
           <div className={styles.switchfriendlist}>

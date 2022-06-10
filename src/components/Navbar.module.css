@@ -17,6 +17,16 @@
     margin: 0px 5px;
     padding-top: 5px;
 }
+.navbar li:nth-child(5){
+    padding-top:10px;
+}
+.navbar li:nth-child(6){
+    padding-top:7px;
+}
+.navbar li:nth-child(n+3):nth-child(-n+6):hover{
+    padding-top:8px;
+    transform: scale(1.1);
+}
 .navbar .logo {
     cursor: pointer;
     margin-left: 20px;
@@ -60,10 +70,6 @@
     display: flex;
     padding-bottom: 8px;
 }
-@media (max-width:700px) {
-    .navbar .form .SearchData{
-        display: none;
-    }
-}
+
 
 

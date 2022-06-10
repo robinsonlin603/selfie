@@ -61,7 +61,7 @@ main .photo{
 main .photo img{
     height: 100%;
 }
-main .photo .legtarrow{
+main .photo .leftarrow{
     z-index: 3;
     position: absolute;
     top: 55%;
@@ -126,6 +126,7 @@ main .comment-container{
     background-color: var(--text-color);
     border-radius: 6px;
     padding-top: 5px;
+    z-index: 3;
 }
 .comment-container .title .more li{
     width: 100%;
@@ -140,6 +141,7 @@ main .comment-container{
 .comment-container .title .more li:last-child{
     padding-right: 0px;
     border-bottom: none;
+    display: block;
 }
 
 .comment-container .comment{    
@@ -167,6 +169,9 @@ main .comment-container{
 .comment-container .comment .comment-text{
     display: grid;
     grid-template-rows: auto 20px;
+    flex-grow: 1;
+    margin-right: 10px;
+    
 }
 .comment-container .comment .comment-text p{
     font-size: 0.8rem;
@@ -178,16 +183,18 @@ main .comment-container{
 }
 .comment-container .comment .comment-text form{
     display: flex;
+    position: relative;
+    justify-content: flex-end;
 }
 .comment-container .comment .comment-text form button{
     position: absolute;
     margin-top: 25px;
-    margin-left:255px;
+    margin-right: 10px;
     height: 30px;
-    padding: 0px 12px;
+    padding: 0px 12px;  
 }
 .comment-container .comment .comment-text form label{
-    width: 350px;
+    width: 100%;
     height: 50px;
     margin: 10px 0px;
 }
@@ -261,42 +268,11 @@ main .comment-container{
     }
 }
 
-@media (max-width:910px) {
-    .comment-container .comment .comment-text form button{
-        margin-left:180px;
-    }
-    .comment-container .comment .comment-text form label{
-        width: 99%;
-    }
-}
-@media (max-width:740px) {
-    .comment-container .comment .comment-text form button{
-        margin-left:22%;
-    }
-}
-@media (max-width:650px) {
-    .comment-container .comment .comment-text form button{
-        margin-left:20%;
-    }
-}
-@media (max-width:600px) {
-    .comment-container .comment .comment-text form button{
-        margin-left:18%;
-    }
-}
-@media (max-width:560px) {
-    .comment-container .comment .comment-text form button{
-        margin-left:15%;
-    }
-}
 @media (max-width:500px) {
     .post-container main{
         grid-template-columns: 300px;
     }
     .post-container main .photo{
         display: none;
-    }
-    .comment-container .comment .comment-text form button{
-        margin-left:180px;
     }
 }

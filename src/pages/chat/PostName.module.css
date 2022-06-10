@@ -6,10 +6,9 @@
     align-items: center;
 }
 .postname .photo{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    padding-bottom: 10px;
 }
 .postname h3{
     font-weight: 400;

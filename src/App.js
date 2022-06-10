@@ -20,6 +20,7 @@ import Post from "./components/Post";
 import Chat from "./pages/chat/Chat";
 import Conversation from "./pages/chat/Conversation";
 import Friendlist from "./pages/friendlist/Friendlist";
+import Introduce from "./pages/introduce/Introduce";
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -33,10 +34,7 @@ function App() {
             {user && <Navbar />}
             {data && <Post postInfo={data} />}
             <Routes>
-              <Route
-                path="/"
-                element={user ? <Home /> : <Navigate to="/login" />}
-              />
+              <Route path="/" element={user ? <Home /> : <Introduce />} />
               <Route
                 path="/profile/:id"
                 element={user ? <Profile /> : <Navigate to="/login" />}

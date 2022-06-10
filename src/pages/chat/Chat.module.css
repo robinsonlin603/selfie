@@ -19,6 +19,7 @@
     justify-content: flex-end;
 }
 .chatroom .user li:last-child{
+    width: 100%;
     margin-right: 10px;
 }
 .chatroom .user img{
