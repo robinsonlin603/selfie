@@ -5,7 +5,7 @@
 
 <p>
   <img src="https://user-images.githubusercontent.com/93252094/173021335-77343e70-b743-4211-967c-ceed96cbaf7a.png"/>
-    Selfie is a Social Media allows you to post and wathch others posts anytime and anywhere.
+  Selfie is a free photo sharing website. People can upload photos to our service and share them with others. Users can also view, comment and like posts shared by    other users on Selfie. Anyone can create an account by registering an email address and selecting a username.
 </p>
 <p>
   <img src="https://user-images.githubusercontent.com/93252094/173026944-30e89b38-1971-4905-8fa8-3200dd9e4a73.png"/>
