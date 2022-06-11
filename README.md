@@ -20,12 +20,39 @@ Test accuont and password: cat@cat.com/123456789<br />
 ## Table of Contents ##
 + [Main Feature](#main-feature)
 + [Frontend Technique](#frontend-technique)
-+ [Architecture](#architecture)
+    + [React](#react)
+    + [React Router](#react-router)
++ [Backend Technique (Firebase V9)](#backend-technique-firebase-v9)
+    + [Firebase Authentication](#firebase-authentication)
+    + [Cloud Firestore](#cloud-firestore)
+    + [Firebase Storage](#firebase-storage)
+    + [Firebase Hosting](#firebase-hosting)
 + [Contact](#contact)
 ## Main Feature
-
++ Users can upload photos to our service and share them.
++ Only creater can remove or edit post.
++ users can leave comment and likes post to interact with creater.
++ In friendlist, you can see a list of the people you're following and who's following you.
++ Provide user profile,you can view what you've shared.
++ Direct Messaging.
 ## Frontend Technique
-
-## Architecture
-
+### React
++ SPA with functional components.
++ hooks: useState, useEffect, useRef, useContext, useReducer.
+### React Router
++ version: 6
++ SPA routing. 
+## Backend Technique (Firebase V9)
+### Firebase Authentication
++ Login/logout with email and password.
+### Cloud Firestore
++ Store user data, posts data and conversation data
++ Use onSnapShot listen to documents.Then, each time the contents change, another call updates the document snapshot.
+### Firebase Storage
++ Hosting images uploaded from user.
+### Firebase Hosting
++ Hosting static and dynamic content of web.
 ## Contact
++ Hou-An,Lin
++ LinkedIn: https://www.linkedin.com/in/%E5%8E%9A%E5%AE%89-%E6%9E%97-123342222/
++ mail: am810603@gamil.com
