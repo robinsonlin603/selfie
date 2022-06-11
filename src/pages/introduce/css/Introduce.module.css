@@ -1,6 +1,6 @@
 .introduce-container{
     display: grid;
-    grid-template-rows: 585px auto;
+    grid-template-rows: 100vh auto;
     background-color: white;
 }
 .introduce-container .introduce{
@@ -9,7 +9,7 @@
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 585px;
+    height: 100vh;
     position: absolute;
     width: 100%;
     display: flex;
