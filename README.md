@@ -38,17 +38,31 @@ Test accuont and password: cat@cat.com/123456789<br />
   <img src="https://user-images.githubusercontent.com/93252094/173233730-4552f312-8a68-4bbb-9914-94a044a11750.gif" />
 </p>
 + users can leave comment and likes post to interact with creater.
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93252094/173234533-4ff21704-3666-461b-a3e6-374b8ab88bce.gif" />
+</p>
 + In friendlist, you can see a list of the people you're following and who's following you.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93252094/173234533-4ff21704-3666-461b-a3e6-374b8ab88bce.gif" />
+</p>
 + Provide user profile,you can view what you've shared.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93252094/173234680-a42e4782-c217-4e72-bf29-37cbe0a12dda.gif" />
+</p>
 + Direct Messaging.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93252094/173236873-79585239-30b4-476b-b771-58c95037c080.gif" />
+</p>
+
 ## Frontend Technique
 ### React
-+ SPA with functional components.
-+ hooks: useState, useEffect, useRef, useContext, useReducer.
++ Single-page application with functional components.
++ Hooks: useState, useEffect, useRef, useContext, useReducer, custom Hook.
++ Structure:
+![structure](https://user-images.githubusercontent.com/93252094/173241625-c74d1804-5d8f-4567-bbd9-8a6527fd3a7f.png)
 ### React Router
-+ version: 6
-+ SPA routing. 
++ Version: 6
++ Handle single-page application routes. 
 ## Backend Technique (Firebase V9)
 ### Firebase Authentication
 + Login/logout with email and password.
