@@ -28,6 +28,7 @@ Test accuont and password: cat@cat.com/123456789<br />
     + [Firebase Storage](#firebase-storage)
     + [Firebase Hosting](#firebase-hosting)
 + [Contact](#contact)
+
 ## Main Feature
 + Users can upload photos to our service and share them.
 <p align="center">
@@ -52,6 +53,10 @@ Test accuont and password: cat@cat.com/123456789<br />
 + Direct Messaging.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173236873-79585239-30b4-476b-b771-58c95037c080.gif" />
+</p>
++ Search other user
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93252094/173241998-4f520ab2-eb69-4a5d-b121-88f90a601b15.gif" />
 </p>
 
 ## Frontend Technique
