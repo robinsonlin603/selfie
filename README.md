@@ -30,7 +30,9 @@ Test accuont and password: cat@cat.com/123456789<br />
 + [Contact](#contact)
 ## Main Feature
 + Users can upload photos to our service and share them.
+![AddPost](https://user-images.githubusercontent.com/93252094/173230049-ce3ab034-5c09-4b72-858a-aa2332b18b79.gif)
 + Only creater can remove or edit post.
+![edit](https://user-images.githubusercontent.com/93252094/173233730-4552f312-8a68-4bbb-9914-94a044a11750.gif)
 + users can leave comment and likes post to interact with creater.
 + In friendlist, you can see a list of the people you're following and who's following you.
 + Provide user profile,you can view what you've shared.
