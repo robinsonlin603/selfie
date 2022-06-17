@@ -88,6 +88,7 @@
 .content-container{
     display: flex;
     align-items: center;
+    padding-top: 10px;
 }
 
 .content-container .heart{
@@ -112,7 +113,7 @@
 
 .comment-container{
     display: grid;
-    grid-template-rows: 55px auto 20px;
+    grid-template-rows: 35px auto 20px;
     align-items: center;
     border-bottom: solid gainsboro 0.5px;
 }
@@ -125,6 +126,7 @@
 
 .comment-container .details h4{
     margin-right: 10px;
+    font-size: 14px;
 }
 
 .comment-container .details span{
@@ -137,6 +139,7 @@
     padding-left: 16px;
     font-weight: bold;
     margin-bottom: 3px;
+    margin-top: 5px;
 }
 .comment-container .caption .displayName{
     cursor: pointer;
@@ -224,7 +227,10 @@
     .photo-container .rightarrow{
         top: 160px;
         left: 315px;
-    }   
+    }  
+    .content-container{
+        padding-top: 5px;
+    } 
     .content-container .circle{
         width:280px;
     }
@@ -233,6 +239,7 @@
     }
     .comment-container{
         width: 340px;
+        grid-template-rows: 55px auto 20px;
     }
     .comment-container .details{
         font-size: 0.8rem;

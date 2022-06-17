@@ -1,22 +1,22 @@
 import { useState } from "react";
-import { useFirestore } from "../../hooks/useFirestore";
-import { usePostContext } from "../../hooks/usePostContext";
+import { useFirestore } from "../../../hooks/useFirestore";
+import { usePostContext } from "../../../hooks/usePostContext";
 import { useNavigate } from "react-router-dom";
 
 // styles and images
 import styles from "../css/ShowPosts.module.css";
 // import More from "../assets/more.svg";
-import Left from "../../assets/btn_leftArrow.png";
-import Right from "../../assets/btn_rightArrow.png";
-import Heart from "../../assets/heart.svg";
-import Favorite from "../../assets/favorite.png";
+import Left from "../../../assets/btn_leftArrow.png";
+import Right from "../../../assets/btn_rightArrow.png";
+import Heart from "../../../assets/heart.svg";
+import Favorite from "../../../assets/favorite.png";
 
 // components
-import Avatar from "./Avatar";
-import Circle from "./Circle";
+import Avatar from "../../../components/js/Avatar";
+import Circle from "../../../components/js/Circle";
 
 // firebase
-import { timestamp } from "../../firebase/config";
+import { timestamp } from "../../../firebase/config";
 
 export default function ShowPosts({ post, user }) {
   const [selectPicture, setSelectPicture] = useState(0);
@@ -165,15 +165,15 @@ export default function ShowPosts({ post, user }) {
       <div className={styles["comment-container"]}>
         <div className={styles.details}>
           <div className={styles.detailtext}>
-            <h4>Category:</h4>
+            <h4>Category：</h4>
             <span>{post.category}</span>
           </div>
           <div className={styles.detailtext}>
-            <h4>Date:</h4>
+            <h4>Date：</h4>
             <span>{post.dueDate}</span>
           </div>
           <div className={styles.detailtext}>
-            <h4>Like:</h4>
+            <h4>Like：</h4>
             <span>{post.hearts} people</span>
           </div>
         </div>

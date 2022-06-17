@@ -7,7 +7,7 @@ import { useElementOnScreen } from "../../../hooks/useElementOnScreen";
 import styles from "../css/Home.module.css";
 
 // components
-import ShowPosts from "../../../components/js/ShowPosts";
+import ShowPosts from "./ShowPosts";
 import PostFilter from "./PostFilter";
 
 export default function Home() {

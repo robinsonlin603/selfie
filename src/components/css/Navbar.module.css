@@ -18,10 +18,7 @@
     padding-top: 5px;
 }
 .navbar li:nth-child(5){
-    padding-top:10px;
-}
-.navbar li:nth-child(6){
-    padding-top:7px;
+    padding-top:8px;
 }
 .navbar li:nth-child(n+3):nth-child(-n+6):hover{
     padding-top:8px;
@@ -68,7 +65,7 @@
 }
 .navbar .friend{
     display: flex;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 
