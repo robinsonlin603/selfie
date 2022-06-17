@@ -14,12 +14,3 @@ service cloud.firestore {
     }
   }
 }
-
-
-// user collection
-// - any authenticated user can read & create
-// - only users who "own/created" a document can update it ( user id's match)
-
-// projects collection
-// - any authenticated user can read ,create & update a document
-// - only users who "own/created" a document can delete it

@@ -18,43 +18,48 @@ Test accuont and password: cat@cat.com/123456789<br />
 </p>
 
 ## Table of Contents ##
-+ [Main Feature](#main-feature)
++ [Main Features](#main-features)
 + [Frontend Technique](#frontend-technique)
     + [React](#react)
     + [React Router](#react-router)
-+ [Backend Technique (Firebase V9)](#backend-technique-firebase-v9)
++ [Cloud Service Technique (Firebase V9)](#cloud-service-technique-firebase-v9)
     + [Firebase Authentication](#firebase-authentication)
     + [Cloud Firestore](#cloud-firestore)
     + [Firebase Storage](#firebase-storage)
     + [Firebase Hosting](#firebase-hosting)
 + [Contact](#contact)
 
-## Main Feature
-+ Users can upload photos to our service and share them.
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/93252094/173230049-ce3ab034-5c09-4b72-858a-aa2332b18b79.gif" />
+## Main Features
++ Users can upload photos to our service and share them.</p><p align="center">
+  <p align="center"><img src="https://user-images.githubusercontent.com/93252094/173230049-ce3ab034-5c09-4b72-858a-aa2332b18b79.gif" />
 </p>
-+ Only creater can remove or edit post.
+
++ Only creator can remove or edit post.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173233730-4552f312-8a68-4bbb-9914-94a044a11750.gif" />
 </p>
-+ users can leave comment and likes post to interact with creater.
+
++ users can leave comment and likes post to interact with creator.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173234533-4ff21704-3666-461b-a3e6-374b8ab88bce.gif" />
 </p>
-+ In friendlist, you can see a list of the people you're following and who's following you.
+
++ In friend list, you can see a list of the people you're following and who's following you.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173234533-4ff21704-3666-461b-a3e6-374b8ab88bce.gif" />
 </p>
-+ Provide user profile,you can view what you've shared.
+
++ Provide user profile, you can view what you've shared.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173234680-a42e4782-c217-4e72-bf29-37cbe0a12dda.gif" />
 </p>
+
 + Direct Messaging.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173236873-79585239-30b4-476b-b771-58c95037c080.gif" />
 </p>
-+ Search other user
+
++ Search other user.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173241998-4f520ab2-eb69-4a5d-b121-88f90a601b15.gif" />
 </p>
@@ -68,7 +73,7 @@ Test accuont and password: cat@cat.com/123456789<br />
 ### React Router
 + Version: 6
 + Handle single-page application routes. 
-## Backend Technique (Firebase V9)
+## Cloud Service Technique (Firebase V9)
 ### Firebase Authentication
 + Login/logout with email and password.
 ### Cloud Firestore
@@ -80,5 +85,5 @@ Test accuont and password: cat@cat.com/123456789<br />
 + Hosting static and dynamic content of web.
 ## Contact
 + Hou-An,Lin
-+ LinkedIn: https://www.linkedin.com/in/%E5%8E%9A%E5%AE%89-%E6%9E%97-123342222/
++ LinkedIn: www.linkedin.com/in/robinson0603
 + mail: am810603@gamil.com
