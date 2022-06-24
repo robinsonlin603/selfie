@@ -103,7 +103,7 @@ uses the **Firebase** to set up the website, database, storage and member system
 </p>
 
 ### Chatroom
-+ Real time chat with friend with friend by **Firestore onSnapshot method**.
++ Realtime chat with friend by **Firestore onSnapshot method**.
 + Switch chatroom by **React Router Outlet** to render children route elements.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173236873-79585239-30b4-476b-b771-58c95037c080.gif" />
