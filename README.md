@@ -76,7 +76,7 @@ uses the **Firebase** to set up the website, database, storage and member system
 ### Firebase Hosting
 + Hosting static and dynamic content of the web.
 ## Main Features
-### Infinite scroll & Lazy load
+### Infinite scroll
 + Use **Intersection observer** observer **useRef** binding element.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/175103275-e53ea392-f368-4c64-ae12-0cba3d5a679c.gif" />
