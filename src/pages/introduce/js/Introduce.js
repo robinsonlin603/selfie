@@ -38,10 +38,10 @@ export default function Introduce() {
       <div className={styles.homepage}>
         <div className={styles.part1}>
           <div className={styles.text}>
-            <h3>A post bring the world coloser together </h3>
+            <h3>A post bring the world closer together </h3>
             <p>Share your life by posts.And know others.</p>
             <p>Easy to use whole functions in navbar.</p>
-            <p>Wath posts and kill time until get off.</p>
+            <p>Watch posts and kill time until get off.</p>
           </div>
           <div className={styles.photo}>
             <img src={Selfie} alt="Selfie"></img>
@@ -56,14 +56,14 @@ export default function Introduce() {
               </div>
               <h4>Add post with click</h4>
               <p>Select photos you want to share.</p>
-              <p>And add caption to post.</p>
+              <p>And add captions to post.</p>
             </div>
             <div className={styles.introfun}>
               <div className={styles.photo}>
                 <img src={Chat} alt="Chat" />
               </div>
               <h4>Chatroom</h4>
-              <p>chat with anyone have same interests and hobbies.</p>
+              <p>Chat with anyone who has the same interests and hobbies.</p>
             </div>
             <div className={styles.introfun}>
               <div className={styles.photo}>
@@ -71,7 +71,7 @@ export default function Introduce() {
               </div>
               <h4>Friendlist</h4>
               <p>Following anyone you like.</p>
-              <p>When you have new follower,we will remind you.</p>
+              <p>When you have a new follower,we will remind you.</p>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Introduce() {
           <div className={styles.text}>
             <h3>Easy to browse</h3>
             <p>Support desktop and mobile.</p>
-            <p>See post in anywhere and anytime you want.</p>
+            <p>See posts anywhere and anytime you want.</p>
           </div>
         </div>
         <div className={styles.button}>
