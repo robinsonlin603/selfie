@@ -40,8 +40,7 @@
 + [Main Features](#main-features)
 + [Contact](#contact)
 ## Skills Structure
-The development of Selfie in frontend is constructed by **React**, and is used with **React Router** to implement **Single Page Application (SPA)**.The part of backend
-uses the **Firebase** to set up the website, database, storage and member system.The development tools use **Webpack** for module bundle, **Babel** for compatible version of JavaScript in environments., **NPM** for package management, **ESLint** to check syntax and unified coding styled, and **Github** to control the Git version. 
+The development of Selfie in frontend is constructed by **React**, and is used with **React Router** to implement **Single Page Application (SPA)**. The part of backend uses the **Firebase** to set up the website, database, storage and member system. The development tools use **Webpack** for module bundle, **Babel** for compatible version of JavaScript in environments., **NPM** for package management, **ESLint** to check syntax and unified coding styled, and **Github** to control the Git version. 
  <br/>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/175520403-0b68115e-6bec-44ba-8aa8-bc9ee2e58406.png"/>
