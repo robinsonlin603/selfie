@@ -40,24 +40,23 @@
 + [Main Features](#main-features)
 + [Contact](#contact)
 ## Skills Structure
-The development of Selfie in frontend is constructed by **React**, and is used with **React Router** to implement **Single Page Application (SPA)**.The part of backend
-uses the **Firebase** to set up the website, database, storage and member system.The development tools use **Webpack** for module bundle, **Babel** for compatible version of JavaScript in environments., **NPM** for package management, **ESLint** to check syntax and unified coding styled, and **Github** to control the Git version. 
+The development of Selfie in frontend is constructed by **React**, and is used with **React Router** to implement **Single Page Application (SPA)**. The part of backend uses the **Firebase** to set up the website, database, storage and member system. The development tools use **Webpack** for module bundle, **Babel** for compatible version of JavaScript in environments., **NPM** for package management, **ESLint** to check syntax and unified coding styled, and **Github** to control the Git version. 
  <br/>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/93252094/175025779-6ca564a8-4831-4e63-98fe-868634c8f683.png"/>
+  <img src="https://user-images.githubusercontent.com/93252094/175520403-0b68115e-6bec-44ba-8aa8-bc9ee2e58406.png"/>
 </p>
 
 ## Frontend Technique
 ### Component Structure
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/93252094/175045409-83452f97-3837-4020-bf26-74f8e81bdffa.png"/>
+  <img src="https://user-images.githubusercontent.com/93252094/175522419-5f562216-5604-437c-b865-0aaaaf9ba914.png"/>
 </p>
-  
+
 ### Global State
 + Get action from custom hook, then **useReducer** return a new state.
 + Store state in global by **useContext**.
 ### Custom Hook
-+ Implement **CRUD** operation.
++ Implement **CRUD** operation on **Firebase**.
 + Dispatch action to **useReducer**.
 ### useRef
 + Reference to the element which wants to observe, then **mutable observational object**.  
@@ -76,7 +75,7 @@ uses the **Firebase** to set up the website, database, storage and member system
 ### Firebase Hosting
 + Hosting static and dynamic content of the web.
 ## Main Features
-### Infinite scroll & Lazy load
+### Infinite scroll
 + Use **Intersection observer** observer **useRef** binding element.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/175103275-e53ea392-f368-4c64-ae12-0cba3d5a679c.gif" />
@@ -103,7 +102,7 @@ uses the **Firebase** to set up the website, database, storage and member system
 </p>
 
 ### Chatroom
-+ Real time chat with friend with friend by **Firestore onSnapshot method**.
++ Realtime chat with friend by **Firestore onSnapshot method**.
 + Switch chatroom by **React Router Outlet** to render children route elements.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93252094/173236873-79585239-30b4-476b-b771-58c95037c080.gif" />
