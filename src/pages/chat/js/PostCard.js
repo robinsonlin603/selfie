@@ -7,7 +7,7 @@ import styles from "../css/PostCard.module.css";
 // components
 import Avatar from "../../../components/js/Avatar";
 
-export default function PostCard({ member, chatroomId, setChangeChat }) {
+export default function PostCard({ member, chatroomId }) {
   const { documents: userProfile } = usePostCollection("users", member[0]);
   return (
     <Link

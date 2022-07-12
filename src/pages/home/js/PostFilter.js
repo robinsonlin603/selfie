@@ -18,6 +18,7 @@ export default function PostFilter({ currentFilter, changeFilter }) {
             onClick={() => handleClick(f)}
             data-content={f}
             className={currentFilter === f ? styles.clickbutton : styles.button}
+            title={f}
           ></button>
         ))}
       </nav>
