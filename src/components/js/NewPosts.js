@@ -16,6 +16,7 @@ const categories = [
   { value: "Trip", label: "Trip" },
   { value: "Foodie", label: "Foodie" },
   { value: "Life", label: "Life" },
+  { value: "Hello", label: "Hello" },
   { value: "Else", label: "Else" },
 ];
 

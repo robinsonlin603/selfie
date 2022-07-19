@@ -1,7 +1,7 @@
 // styles
 import styles from "../css/Filter.module.css";
 
-const filterList = ["all", "Selfie", "Trip", "Foodie", "Life", "Else"];
+const filterList = ["all", "Selfie", "Trip", "Foodie", "Life", "Hello", "Else"];
 
 export default function Filter({ currentFilter, changeFilter }) {
   const handleClick = (newFilter) => {

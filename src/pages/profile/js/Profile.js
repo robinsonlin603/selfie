@@ -61,6 +61,8 @@ export default function profile() {
             return document.category === currentFilter;
           case "Life":
             return document.category === currentFilter;
+          case "Hello":
+            return document.category === currentFilter;
           case "Else":
             return document.category === currentFilter;
           default:
